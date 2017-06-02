@@ -7,11 +7,11 @@ from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from plone.supermodel import model
-from z3c.form.browser.text import TextFieldWidget
-from plone.autoform import directives
-from zope.schema import URI, Text
+from zope.schema import URI
 
-
+from plone.directives import form as directivesform
+from plone.formwidget.multifile.widget import MultiFileFieldWidget
+from plone.namedfile.field import NamedFile
 
 class IMakeupPlatformLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
@@ -43,16 +43,8 @@ class IArtist(model.Schema):
         required=False
     )
 
+class IPortfolio(Interface):
 
-
-class Imakeup(Interface):
-
-    title = schema.TextLine(
-        title=_(u'Title'),
-        required=True,
-    )
-
-    description = schema.Text(
-        title=_(u'Description'),
-        required=False,
-    )
+    directivesform.widget(files=MultiFileFieldWidget)
+    files = schema.List(title=u'Images',
+                        value_type=NamedFile())

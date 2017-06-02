@@ -11,11 +11,25 @@
       layer="makeup.platform.interfaces.IMakeupPlatformLayer"
       />
 
+  <browser:page
+      name="custom_view"
+      for="makeup.platform.interfaces.IPortfolio"
+      layer="makeup.platform.interfaces.IMakeupPlatformLayer"
+      class=".portfolio.PortfolioView"
+      permission="zope2.View"
+      />
+
+
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"
       type="plone"
       directory="static"
       />
+
+  <browser:resourceDirectory
+    name="makeup.platform"
+    directory="static"
+    />
 
 </configure>
