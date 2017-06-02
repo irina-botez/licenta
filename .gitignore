@@ -9,6 +9,7 @@
 *.py?
 *.swp
 # dirs
+static/*.[jpg|png|ico]
 test-imgs/
 bin/
 buildout-cache/
