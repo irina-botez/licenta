@@ -4,11 +4,24 @@
       metal:use-macro="context/main_template/macros/master">
 
     <metal:block fill-slot="content-core">
-        <div>
-            <h1>Hello
-                <span tal:content="view/template_var">this gets replaced</span>
-            </h1>
-        </div>
+        <!--<tal:files repeat="pic view/new_try">-->
+          <!--&lt;!&ndash;<img tal:attributes="src string:${context/absolute_url}/@@images/files/${pic}" />&ndash;&gt;-->
+          <!--<img tal:attributes="src string:${context/absolute_url}/@@edit/++widget++form.widgets.files/@@images/${pic/filename}/${repeat/pic/index}" />-->
+        <!--</tal:files>-->
+    <tal:field tal:replace="structure view/widgets/files/@@ploneform-render-widget" />
     </metal:block>
+
+    <!--<metal:define define-macro="widget-rendering">-->
+      <!--<span tal:define="widgets view/widgets/values">-->
+        <!--<tal:widgets repeat="widget python:[w for w in widgets]">-->
+        <!--<metal:field-slot define-slot="field">-->
+          <!--<metal:field define-macro="field">-->
+            <!--<tal:widget tal:condition="python:widget.id !='form-widgets-url'"-->
+                                        <!--tal:replace="structure widget/@@ploneform-render-widget"/>-->
+          <!--</metal:field>-->
+        <!--</metal:field-slot>-->
+        <!--</tal:widgets>-->
+      <!--</span>-->
+    <!--</metal:define>-->
 
 </html>

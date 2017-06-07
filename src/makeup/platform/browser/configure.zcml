@@ -12,10 +12,11 @@
       />
 
   <browser:page
-      name="custom_view"
+      name="view"
       for="makeup.platform.interfaces.IPortfolio"
+      template="templates/portfolio_view.pt"
       layer="makeup.platform.interfaces.IMakeupPlatformLayer"
-      class=".portfolio.PortfolioView"
+      class=".portfolio.MyView"
       permission="zope2.View"
       />
 

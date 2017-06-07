@@ -19,7 +19,7 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="klass">makeup.platform.content.artist.Artist</property>
   <property name="behaviors"></property>
   <property name="schema">makeup.platform.interfaces.IArtist</property>
   <property name="model_source"></property>

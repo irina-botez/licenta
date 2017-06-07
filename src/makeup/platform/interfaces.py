@@ -11,7 +11,7 @@ from zope.schema import URI
 
 from plone.directives import form as directivesform
 from plone.formwidget.multifile.widget import MultiFileFieldWidget
-from plone.namedfile.field import NamedFile
+from plone.namedfile.field import NamedBlobImage
 
 class IMakeupPlatformLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
@@ -42,9 +42,3 @@ class IArtist(model.Schema):
         title=_(u"Website"),
         required=False
     )
-
-class IPortfolio(Interface):
-
-    directivesform.widget(files=MultiFileFieldWidget)
-    files = schema.List(title=u'Images',
-                        value_type=NamedFile())

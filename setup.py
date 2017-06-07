@@ -43,6 +43,8 @@ setup(
         'setuptools',
         'z3c.jbot',
         'plone.app.dexterity',
+        'plone.namedfile',
+        'plone.formwidget.namedfile',
     ],
     extras_require={
         'test': [
