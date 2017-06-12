@@ -11,16 +11,6 @@
       layer="makeup.platform.interfaces.IMakeupPlatformLayer"
       />
 
-  <browser:page
-      name="view"
-      for="makeup.platform.interfaces.IPortfolio"
-      template="templates/portfolio_view.pt"
-      layer="makeup.platform.interfaces.IMakeupPlatformLayer"
-      class=".portfolio.MyView"
-      permission="zope2.View"
-      />
-
-
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"

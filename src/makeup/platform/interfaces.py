@@ -42,3 +42,31 @@ class IArtist(model.Schema):
         title=_(u"Website"),
         required=False
     )
+
+class IClient(model.Schema):
+
+    title = schema.TextLine(
+        title=_(u"Name"),
+        required=True
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
+        required=False
+    )
+
+    phone = schema.TextLine(
+        title=_(u"Phone number"),
+        required=True
+    )
+
+    email = schema.TextLine(
+        title=_(u"Email"),
+        required=True
+    )
+
+    self_image = NamedBlobImage(
+        title=_(u"Upload an image of yourself with no makeup"),
+        required=False
+    )
+
