@@ -9,13 +9,6 @@
   <includeDependencies package="." />
 
   <include package=".browser" />
-  <exclude package="collective.quickupload" file="configure.zcml" />
-  <include package="collective.quickupload" file="minimal.zcml" />
-
-  <class class="makeup.platform.content.artist.Artist">
-    <implements interface="collective.quickupload.browser.interfaces.IQuickUploadCapable" />
-  </class>
-
 
   <genericsetup:registerProfile
       name="default"

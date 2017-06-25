@@ -3,15 +3,15 @@
 
 from makeup.platform import _
 from zope import schema
-from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-
 from plone.supermodel import model
 from zope.schema import URI
+from makeup.platform import utils
 
-from plone.directives import form as directivesform
-from plone.formwidget.multifile.widget import MultiFileFieldWidget
 from plone.namedfile.field import NamedBlobImage
+
+
+
 
 class IMakeupPlatformLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
@@ -30,12 +30,14 @@ class IArtist(model.Schema):
 
     phone = schema.TextLine(
         title=_(u"Phone number"),
-        required=True
+        required=True,
+        constraint=utils.check_phone
     )
 
     email = schema.TextLine(
         title=_(u"Email"),
-        required=True
+        required=True,
+        constraint=utils.validate_email
     )
 
     website = URI(
@@ -57,12 +59,14 @@ class IClient(model.Schema):
 
     phone = schema.TextLine(
         title=_(u"Phone number"),
-        required=True
+        required=True,
+        constraint=utils.check_phone
     )
 
     email = schema.TextLine(
         title=_(u"Email"),
-        required=True
+        required=True,
+        constraint=utils.validate_email
     )
 
     self_image = NamedBlobImage(
