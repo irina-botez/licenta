@@ -11,6 +11,13 @@
       layer="makeup.platform.interfaces.IMakeupPlatformLayer"
       />
 
+  <browser:page
+      name="register"
+      for="Products.CMFPlone.Portal.PloneSite"
+      class=".forms.CustomRegistrationForm"
+      permission="zope.Public"
+      />
+
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"
