@@ -18,6 +18,13 @@
       permission="zope.Public"
       />
 
+  <browser:page
+      for="*"
+      name="deal-alerts"
+      class=".interfaces.UserTypeView"
+      permission="zope2.View"
+   />
+
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"
