@@ -1,0 +1,16 @@
+<sharing xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+         i18n:domain="makeup.platform">
+  <role
+      id="Makeup Artist"
+      title="Is a makeup artist"
+      permission="Manage portal"
+      i18n:attributes="title"
+      />
+
+   <role
+      id="Client"
+      title="Is a client"
+      permission="Manage portal"
+      i18n:attributes="title"
+      />
+</sharing>
