@@ -25,7 +25,7 @@ class UserType(RegistrationForm):
         return myfields
 
     @button.buttonAndHandler(
-        _(u'label_register', default=u'Register'), name='register'
+        _(u'label_register', default=u'Next Step'), name='register'
     )
     def custom_register(self, action):
 
@@ -43,10 +43,8 @@ class UserType(RegistrationForm):
         user = api.user.create(email=data['email'], username=data['username'], properties=properties,)
 
         api.user.grant_roles(username=data['username'],
-                             roles=['Reviewer', role]
+                             roles=[role,]
                              )
-
-        # import pdb;pdb.set_trace()
 
 UserTypeView = UserType
 
