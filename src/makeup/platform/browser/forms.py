@@ -5,6 +5,8 @@ from zope.interface import implements
 from z3c.form import field, button
 from makeup.platform import _
 
+from plone import api
+
 class UserType(RegistrationForm):
 
     implements(ICustomRegistrationForm)
@@ -26,7 +28,25 @@ class UserType(RegistrationForm):
         _(u'label_register', default=u'Register'), name='register'
     )
     def custom_register(self, action):
-        print "Test"
+
+        data, errors = self.extractData()
+
+        if data['user_type'] == 'Client':
+            role='Client'
+        else:
+            role='Makeup Artist'
+
+        properties = dict(
+            fullname=data['fullname'],
+        )
+
+        user = api.user.create(email=data['email'], username=data['username'], properties=properties,)
+
+        # api.user.grant_roles(username='jane',
+        #                      roles=['Reviewer', 'SiteAdministrator']
+        #                      )
+
+        # import pdb;pdb.set_trace()
 
 UserTypeView = UserType
 
