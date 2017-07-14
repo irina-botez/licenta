@@ -22,6 +22,12 @@ class UserType(RegistrationForm):
 
         return myfields
 
+    @button.buttonAndHandler(
+        _(u'label_register', default=u'Register'), name='register'
+    )
+    def custom_register(self, action):
+        print "Test"
+
 UserTypeView = UserType
 
 
