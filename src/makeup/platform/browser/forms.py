@@ -42,9 +42,9 @@ class UserType(RegistrationForm):
 
         user = api.user.create(email=data['email'], username=data['username'], properties=properties,)
 
-        # api.user.grant_roles(username='jane',
-        #                      roles=['Reviewer', 'SiteAdministrator']
-        #                      )
+        api.user.grant_roles(username=data['username'],
+                             roles=['Reviewer', role]
+                             )
 
         # import pdb;pdb.set_trace()
 
