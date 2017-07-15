@@ -1,6 +1,5 @@
 from zope.interface import Interface
 from makeup.platform import _
-from plone.supermodel import model
 from zope import schema
 
 class ICustomRegistrationForm(Interface):
@@ -14,6 +13,16 @@ class IUserType(Interface):
         required = True,
         default = u'Client',
         values = [_(u'Makeup Artist'), _(u'Client')]
+    )
+
+    password_1 = schema.Password(
+        title = _(u"Enter a password"),
+        required = True,
+    )
+
+    password_2 = schema.Password(
+        title=_(u"Enter the password again"),
+        required=True,
     )
 
 
