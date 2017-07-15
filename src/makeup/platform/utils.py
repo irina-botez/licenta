@@ -18,3 +18,10 @@ def validate_email(email):
     except EmailAddressInvalid:
         raise EmailAddressInvalid(email)
     return True
+
+def check_password(passw):
+    if len(passw) !=5:
+        raise Invalid(_(u"The password must contain at least 5 characters"))
+
+
+

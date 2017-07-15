@@ -42,7 +42,7 @@ class UserType(RegistrationForm):
             fullname=data['fullname'],
         )
 
-        user = api.user.create(email=data['email'], username=data['username'], properties=properties,)
+        user = api.user.create(email=data['email'], username=data['username'], password=data['password_1'] ,properties=properties,)
 
         api.user.grant_roles(username=data['username'],
                              roles=[role,]

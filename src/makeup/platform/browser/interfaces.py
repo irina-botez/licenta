@@ -1,6 +1,7 @@
 from zope.interface import Interface
 from makeup.platform import _
 from zope import schema
+from makeup.platform import utils
 
 class ICustomRegistrationForm(Interface):
     """Marker interface for registration form with radio buttons : MUA or Client
@@ -18,11 +19,6 @@ class IUserType(Interface):
     password_1 = schema.Password(
         title = _(u"Enter a password"),
         required = True,
+        constraint = utils.check_password,
     )
-
-    password_2 = schema.Password(
-        title=_(u"Enter the password again"),
-        required=True,
-    )
-
 
