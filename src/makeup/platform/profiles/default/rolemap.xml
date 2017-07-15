@@ -5,5 +5,11 @@
     <role name="Client"/>
   </roles>
   <permissions>
+    <permission name="Makeup Platform: Add Client permission" acquire="True">
+      <role name="Client"/>
+    </permission>
+    <permission name="Makeup Platform: Add Makeup Artist permission" acquire="True">
+      <role name="Makeup Artist"/>
+    </permission>
   </permissions>
 </rolemap>

@@ -1,0 +1,15 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="makeup.platform">
+
+   <permission
+    id="makeup.platform.addNewClient"
+    title="Makeup Platform: Add Client permission"
+    />
+
+   <permission
+    id="makeup.platform.addNewMUA"
+    title="Makeup Platform: Add Makeup Artist permission"
+    />
+
+</configure>

@@ -18,7 +18,7 @@
     <element value="view"/>
   </property>
   <property name="default_view_fallback">False</property>
-  <property name="add_permission">cmf.AddPortalContent</property>
+  <property name="add_permission">makeup.platform.addNewMUA</property>
   <property name="klass">makeup.platform.content.artist.Artist</property>
   <property name="behaviors"></property>
   <property name="schema">makeup.platform.interfaces.IArtist</property>

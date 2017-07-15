@@ -11,7 +11,6 @@ class UserType(RegistrationForm):
 
     implements(ICustomRegistrationForm)
 
-
     fields = field.Fields(IUserType)
     ignoreContext = True  # don't use context to get widget data
     def updateWidgets(self):
