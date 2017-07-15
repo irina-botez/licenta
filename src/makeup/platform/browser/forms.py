@@ -30,11 +30,14 @@ class UserType(RegistrationForm):
     def custom_register(self, action):
 
         data, errors = self.extractData()
+        url = self.context.absolute_url()
 
         if data['user_type'] == 'Client':
             role='Client'
+            redirect=url  + "/++add++Client"
         else:
             role='Makeup Artist'
+            redirect = url + "/++add++MakeupArtist"
 
         properties = dict(
             fullname=data['fullname'],
@@ -45,6 +48,8 @@ class UserType(RegistrationForm):
         api.user.grant_roles(username=data['username'],
                              roles=[role,]
                              )
+
+        self.request.response.redirect(redirect)
 
 UserTypeView = UserType
 
