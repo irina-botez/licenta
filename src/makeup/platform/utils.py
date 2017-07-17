@@ -20,8 +20,10 @@ def validate_email(email):
     return True
 
 def check_password(passw):
-    if len(passw) !=5:
+
+    if len(passw) <5:
         raise Invalid(_(u"The password must contain at least 5 characters"))
+    return True
 
 
 
