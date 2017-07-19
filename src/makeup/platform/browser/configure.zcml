@@ -18,6 +18,13 @@
       permission="zope.Public"
       />
 
+  <browser:page
+      name="view_mua"
+      for="Products.CMFPlone.Portal.PloneSite"
+      class=".views.MuaView"
+      permission="zope.Public"
+      />
+
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"
