@@ -1,0 +1,8 @@
+<div id="mua-link">
+    <a href="#"
+       class="mua-anchor"
+       tal:define="link view/get_mua_page"
+       tal:attributes="href link">
+         Check out all the artists!
+    </a>
+</div>

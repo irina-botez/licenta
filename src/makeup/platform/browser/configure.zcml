@@ -25,6 +25,16 @@
       permission="zope.Public"
       />
 
+  <browser:viewlet
+  name="mua_page_link"
+  for="*"
+  manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+  class=".viewlets.MuaViewlet"
+  layer="zope.interface.Interface"
+  template="templates/mua_page_link.pt"
+  permission="zope2.View"
+  />
+
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"
