@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager=" plone.contentviews" skinname="Plone Default">
+  <viewlet name="plone.contentactions"/>
+ </hidden>
+ <hidden manager=" plone.contentviews" skinname="Sunburst Theme">
+  <viewlet name="plone.contentactions"/>
+ </hidden>
+ <hidden manager="plone.contentviews" skinname="Sunburst Theme">
+  <viewlet name="plone.contentactions"/>
+ </hidden>
+</object>
