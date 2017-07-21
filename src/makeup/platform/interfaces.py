@@ -18,56 +18,12 @@ class IMakeupPlatformLayer(IDefaultBrowserLayer):
 
 class IArtist(model.Schema):
 
-    title = schema.TextLine(
-        title=_(u"Name"),
-        required=True
-    )
-
-    description = schema.Text(
-        title=_(u"Description"),
-        required=False
-    )
-
-    phone = schema.TextLine(
-        title=_(u"Phone number"),
-        required=True,
-        constraint=utils.check_phone
-    )
-
-    email = schema.TextLine(
-        title=_(u"Email"),
-        required=True,
-        constraint=utils.validate_email
-    )
-
     website = URI(
         title=_(u"Website"),
         required=False
     )
 
 class IClient(model.Schema):
-
-    title = schema.TextLine(
-        title=_(u"Name"),
-        required=True
-    )
-
-    description = schema.Text(
-        title=_(u"Description"),
-        required=False
-    )
-
-    phone = schema.TextLine(
-        title=_(u"Phone number"),
-        required=True,
-        constraint=utils.check_phone
-    )
-
-    email = schema.TextLine(
-        title=_(u"Email"),
-        required=True,
-        constraint=utils.validate_email
-    )
 
     self_image = NamedBlobImage(
         title=_(u"Upload an image of yourself with no makeup"),

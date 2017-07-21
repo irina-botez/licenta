@@ -19,6 +19,12 @@ class IUserType(Interface):
     password_1 = schema.Password(
         title = _(u"Enter a password"),
         required = True,
-        constraint = utils.check_password,
+        constraint = utils.check_password
+    )
+
+    phone = schema.TextLine(
+        title=_(u"Phone number"),
+        required=True,
+        constraint=utils.check_phone
     )
 
