@@ -1,0 +1,8 @@
+<div id="register-link">
+    <a href="#"
+       class="register-anchor"
+       tal:define="link view/get_register_page"
+       tal:attributes="href link">
+         Sign up!
+    </a>
+</div>

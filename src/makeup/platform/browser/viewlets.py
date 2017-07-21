@@ -8,3 +8,10 @@ class MuaViewlet(ViewletBase):
 
         return site.absolute_url() + '/@@view_mua'
 
+class RegisterViewlet(ViewletBase):
+
+    def get_register_page(self):
+        site = getSite()
+
+        return site.absolute_url() + '/register'
+
