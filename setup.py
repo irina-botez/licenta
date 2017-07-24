@@ -45,6 +45,7 @@ setup(
         'plone.app.dexterity',
         'plone.namedfile',
         'plone.formwidget.namedfile',
+        'plone.contentratings',
     ],
     extras_require={
         'test': [
