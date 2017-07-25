@@ -6,7 +6,7 @@
     i18n:translate=""></property>
   <property name="icon_expr"></property>
   <property name="factory">Client</property>
-  <property name="add_view_expr">string:${folder_url}/++add++Client</property>
+  <property name="add_view_expr">string:${folder_url}/all-clients/++add++Client</property>
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
   <property name="global_allow">True</property>
