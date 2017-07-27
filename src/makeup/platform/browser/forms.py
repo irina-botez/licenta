@@ -49,7 +49,7 @@ class UserType(RegistrationForm):
             fullname=data['fullname'],
         )
 
-        user = api.user.create(email=data['email'], username=data['username'], password=data['password_1'] ,properties=properties,)
+        user = api.user.create(email=data['email'], username=data['username'], password=data['password'] ,properties=properties,)
 
         api.user.grant_roles(username=data['username'],
                              roles=[role,]
@@ -57,7 +57,6 @@ class UserType(RegistrationForm):
         acl_users = getToolByName(self, 'acl_users')
 
         usr = data['username'].encode('utf-8')
-        pswd = data['password_1'].encode('utf-8')
 
         acl_users.session._setupSession(usr, self.request.response)
         self.request.response.redirect(redirect)
