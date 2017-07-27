@@ -30,6 +30,13 @@
       post_handler=".setuphandlers.uninstall"
       />
 
+  <genericsetup:registerProfile
+       name="makeup-platform"
+       title="Makeup Platform Containers"
+       directory="profiles/makeup-platform"
+       description="Container folders for MUA/Client creations"
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"
