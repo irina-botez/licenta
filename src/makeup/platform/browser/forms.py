@@ -1,4 +1,5 @@
-from plone.app.users.browser.register import RegistrationForm, BaseRegistrationForm
+# -*- coding: utf-8 -*-
+from plone.app.users.browser.register import RegistrationForm
 from makeup.platform.browser.interfaces import ICustomRegistrationForm, IUserType
 from zope.interface import implements
 
@@ -6,6 +7,9 @@ from z3c.form import field, button
 from makeup.platform import _
 
 from plone import api
+from Products.CMFCore.utils import getToolByName
+
+from zope.component import getMultiAdapter
 
 class UserType(RegistrationForm):
 
@@ -28,15 +32,18 @@ class UserType(RegistrationForm):
     )
     def custom_register(self, action):
 
+        portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
+        acl_users = getToolByName(self.context, 'acl_users')
+
         data, errors = self.extractData()
         url = self.context.absolute_url()
 
         if data['user_type'] == 'Client':
             role='Client'
-            redirect=url  + "/++add++Client"
+            redirect=url  + "/all-clients/++add++Client"
         else:
             role='Makeup Artist'
-            redirect = url + "/++add++MakeupArtist"
+            redirect = url + "/all-artists/++add++MakeupArtist"
 
         properties = dict(
             fullname=data['fullname'],
@@ -47,7 +54,12 @@ class UserType(RegistrationForm):
         api.user.grant_roles(username=data['username'],
                              roles=[role,]
                              )
+        acl_users = getToolByName(self, 'acl_users')
 
+        usr = data['username'].encode('utf-8')
+        pswd = data['password_1'].encode('utf-8')
+
+        acl_users.session._setupSession(usr, self.request.response)
         self.request.response.redirect(redirect)
 
 UserTypeView = UserType
