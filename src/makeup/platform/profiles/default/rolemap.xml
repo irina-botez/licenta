@@ -29,6 +29,9 @@
       <role name="Owner"/>
       <role name="Site Administrator"/>
     </permission>
+    <permission name="Content Ratings: User Rate" acquire="True">
+      <role name="Client"/>
+    </permission>
 
   </permissions>
 </rolemap>
