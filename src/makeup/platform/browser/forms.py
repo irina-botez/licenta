@@ -11,6 +11,7 @@ from Products.CMFCore.utils import getToolByName
 
 from zope.component import getMultiAdapter
 
+
 class UserType(RegistrationForm):
 
     implements(ICustomRegistrationForm)
@@ -45,11 +46,7 @@ class UserType(RegistrationForm):
             role='Makeup Artist'
             redirect = url + "/all-artists/++add++MakeupArtist"
 
-        properties = dict(
-            fullname=data['fullname'],
-        )
-
-        user = api.user.create(email=data['email'], username=data['username'], password=data['password'] ,properties=properties,)
+        user = api.user.create(email=data['email'], username=data['username'], password=data['password'])
 
         api.user.grant_roles(username=data['username'],
                              roles=[role,]
@@ -58,6 +55,7 @@ class UserType(RegistrationForm):
 
         usr = data['username'].encode('utf-8')
 
+        # auto-login after form submission + redirect to add page
         acl_users.session._setupSession(usr, self.request.response)
         self.request.response.redirect(redirect)
 
