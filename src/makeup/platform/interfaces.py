@@ -9,7 +9,6 @@ from zope.schema import URI
 from makeup.platform import utils
 
 from plone import api
-import unicodedata
 
 from plone.namedfile.field import NamedBlobImage
 
@@ -55,3 +54,5 @@ class IClient(model.Schema):
         defaultFactory=username_as_title,
     )
 
+class MinMax(object):
+    pass
