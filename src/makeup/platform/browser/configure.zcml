@@ -20,9 +20,11 @@
 
   <browser:page
       name="view_mua"
-      for="Products.CMFPlone.Portal.PloneSite"
+      for="*"
       class=".views.MuaView"
       permission="zope.Public"
+      template="templates/mua_page.pt"
+      layer="makeup.platform.interfaces.IMakeupPlatformLayer"
       />
 
   <browser:viewlet
