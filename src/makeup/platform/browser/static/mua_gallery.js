@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function showSlides(n) {
       var i;
       var slides = document.getElementsByClassName("img-container");
-      console.log(slides);
       if (n > slides.length) {slideIndex = 1}
       if (n < 1) {slideIndex = slides.length}
       for (i = 0; i < slides.length; i++) {
