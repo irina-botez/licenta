@@ -7,6 +7,8 @@
 
 <head>
     <metal:block fill-slot="style_slot">
+      <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
+
     </metal:block>
 </head>
 
@@ -14,38 +16,26 @@
   <metal:block fill-slot="content-core">
     <h1 class="documentFirstHeading" tal:content="view/label | nothing" />
 
-    <div id="img-wrapper">
+    <div id="img-list-wrapper">
 
+      <div class="img-container fade"
+           tal:repeat="pics view/image_listing">
 
-      <img class="mua-page-img"
-           tal:repeat="pics view/image_listing"
-           tal:attributes="src pics"/>
+        <img class="mua-page-img"
+             tal:attributes="src pics"/>
 
+      </div>
 
     </div>
 
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  <a id="prev">&#10094;</a>
+  <a id="next">&#10095;</a>
 
   <script>
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+  </script>
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mua-page-img");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>
+
 
   </metal:block>
 </body>
