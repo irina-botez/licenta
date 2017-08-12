@@ -27,3 +27,6 @@ class MuaView(BrowserView):
         imgs = self.image_listing()
         if len(imgs) > 1:
             return True
+
+    def mua_name(self):
+        return 'Makeup Artist: {}'.format(self.context.name)

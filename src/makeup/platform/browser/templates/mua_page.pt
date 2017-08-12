@@ -14,7 +14,7 @@
 
 <body>
   <metal:block fill-slot="content-core">
-    <h1 class="documentFirstHeading" tal:content="view/label | nothing" />
+    <h1 class="documentFirstHeading" tal:content="view/mua_name" />
 
     <div id="img-list-wrapper">
 
