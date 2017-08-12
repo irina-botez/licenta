@@ -46,7 +46,11 @@ class UserType(RegistrationForm):
             role='Makeup Artist'
             redirect = url + "/all-artists/++add++MakeupArtist"
 
-        user = api.user.create(email=data['email'], username=data['username'], password=data['password'])
+        properties = dict(
+            fullname=data['fullname'],
+        )
+
+        user = api.user.create(email=data['email'], username=data['username'], password=data['password'], properties=properties)
 
         api.user.grant_roles(username=data['username'],
                              roles=[role,]
