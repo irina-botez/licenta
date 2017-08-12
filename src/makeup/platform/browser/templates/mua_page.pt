@@ -28,8 +28,10 @@
 
     </div>
 
-  <a id="prev">&#10094;</a>
-  <a id="next">&#10095;</a>
+  <a tal:condition="view/has_photos"
+     id="prev">&#10094;</a>
+  <a tal:condition="view/has_photos"
+     id="next">&#10095;</a>
 
   <script>
 

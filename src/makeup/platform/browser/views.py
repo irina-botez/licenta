@@ -21,3 +21,9 @@ class MuaView(BrowserView):
             results.append(image.absolute_url())
 
         return results
+
+    def has_photos(self):
+
+        imgs = self.image_listing()
+        if len(imgs) > 1:
+            return True
