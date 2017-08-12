@@ -47,6 +47,14 @@
   permission="zope2.View"
   />
 
+  <browser:menuItem
+        for="makeup.platform.interfaces.IArtist"
+        menu="plone_displayviews"
+        title="MUA page"
+        action="@@view_mua"
+        description="MUA personal page"
+        />
+
   <!-- Publish static files -->
   <plone:static
       name="makeup.platform"
