@@ -14,18 +14,23 @@
 
 <body>
   <metal:block fill-slot="content-core">
+    <h1 id="mua-rate">Rate this MUA</h1>
     <h1 class="documentFirstHeading" tal:content="view/mua_name" />
 
-    <div id="img-list-wrapper">
+    <div id="mua-description-div">
+      <p tal:condition="view/has_description"
+         tal:content="view/has_description">MUA description</p>
 
+      <p tal:condition="python: not view.has_description()">This makeup artist hasn't filled a description yet. Please contact the makeup artist for more information.</p>
+    </div>
+
+    <div id="img-list-wrapper">
       <div class="img-container fade"
            tal:repeat="pics view/image_listing">
 
         <img class="mua-page-img"
              tal:attributes="src pics"/>
-
       </div>
-
     </div>
 
   <a tal:condition="view/has_photos"
