@@ -2,26 +2,20 @@
 """Module where all interfaces, events and exceptions live."""
 
 from makeup.platform import _
-from zope import schema
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from plone.supermodel import model
 from zope.schema import URI
 from makeup.platform import utils
-
 from plone import api
-
 from plone.namedfile.field import NamedBlobImage
+
+from zope import schema
 
 def username_as_title():
 
     current = api.user.get_current()
     id = unicode(current.getProperty('id'), "utf-8")
     return id
-
-def mua_full_name():
-
-    current = api.user.get_current()
-    return unicode(current.getProperty('fullname'), "utf-8")
 
 
 class IMakeupPlatformLayer(IDefaultBrowserLayer):
@@ -43,10 +37,12 @@ class IArtist(model.Schema):
     name = schema.TextLine(
         title=_(u"Full name"),
         required=True,
-        defaultFactory=mua_full_name,
     )
 
-
+    description = schema.Text(
+        title=_(u"Describe yourself and your work in a few words"),
+        required=False,
+    )
 
 class IClient(model.Schema):
 
