@@ -30,3 +30,11 @@ class MuaView(BrowserView):
 
     def mua_name(self):
         return 'Makeup Artist: {}'.format(self.context.name)
+
+    def has_description(self):
+        if self.context.description:
+            return self.context.description
+
+        return False
+
+
