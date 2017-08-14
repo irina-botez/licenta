@@ -27,6 +27,7 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 
+
 /*MUA page*/
 .mua-page-img{
     height: 45em;
@@ -41,6 +42,20 @@ body{
 
 .img-container{
     display: none;
+}
+
+.documentFirstHeading{
+    font-size: 5em;
+}
+
+#mua-description-div{
+    margin-top: 2em;
+    font-size: 2em;
+}
+
+#mua-rate{
+    float:right;
+    padding-right: 1em;
 }
 
 /* Next & previous buttons */
@@ -87,6 +102,8 @@ body{
   from {opacity: .4}
   to {opacity: 1}
 }
+
+
 
 
 
