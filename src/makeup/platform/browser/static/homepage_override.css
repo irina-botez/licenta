@@ -30,14 +30,18 @@ body{
 
 /*MUA page*/
 .mua-page-img{
-    height: 45em;
+    height: 55em;
     width: 45em;
 }
 
 #img-list-wrapper {
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  padding-top: 5em;
+}
+
+#view-imgs{
+    padding-top:4em;
 }
 
 .img-container{
@@ -58,6 +62,10 @@ body{
     padding-right: 1em;
 }
 
+.documentDescription.description{
+    display:none;
+}
+
 /* Next & previous buttons */
 #prev, #next {
   cursor: pointer;
@@ -74,15 +82,19 @@ body{
   background-color: rgba(0,0,0,0.8);
 }
 
+.mua-page-img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+}
+
 /* Position the "next button" to the right */
 #next {
   right: 0;
   border-radius: 3px 0 0 3px;
-  margin-right: 52em;
+  margin-right: 23.5em;
 }
 
 #prev {
-  margin-left: 28.3em;
+  /*margin-left: 28.3em;*/
 }
 
 /* Fading animation */
@@ -102,6 +114,21 @@ body{
   from {opacity: .4}
   to {opacity: 1}
 }
+
+#footer h2{
+    padding-top: 4em;
+    padding-bottom: 1em;
+    text-decoration: underline;
+}
+
+#footer p{
+    font-size: 1.5em;
+}
+
+#map {
+  height: 500px;
+  width: 50%;
+ }
 
 
 

@@ -23,6 +23,11 @@ class IMakeupPlatformLayer(IDefaultBrowserLayer):
 
 class IArtist(model.Schema):
 
+    name = schema.TextLine(
+        title=_(u"Full name"),
+        required=True,
+    )
+
     website = URI(
         title=_(u"Website"),
         required=False
@@ -34,13 +39,13 @@ class IArtist(model.Schema):
         constraint=utils.check_phone,
     )
 
-    name = schema.TextLine(
-        title=_(u"Full name"),
-        required=True,
-    )
-
     description = schema.Text(
         title=_(u"Describe yourself and your work in a few words"),
+        required=False,
+    )
+
+    address = schema.TextLine(
+        title=_(u"Studio address (e.g. strada Castanilor, 10, Bucuresti)"),
         required=False,
     )
 
@@ -64,4 +69,7 @@ class IClient(model.Schema):
     )
 
 class MinMax(object):
+    pass
+
+class DefaultMapLayers(object):
     pass

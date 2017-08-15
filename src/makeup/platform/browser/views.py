@@ -1,5 +1,6 @@
 from Products.Five import BrowserView
 from plone import api
+import googlemaps
 
 class MuaView(BrowserView):
     """View a makeup artist page"""
@@ -36,5 +37,30 @@ class MuaView(BrowserView):
             return self.context.description
 
         return False
+
+    def has_address(self):
+        if self.context.address:
+            return 'Studio address: {}'.format(self.context.address)
+
+    def phone_nr(self):
+        return 'Phone number: {}'.format(self.context.phone)
+
+    def map_studio(self):
+        results = {}
+
+        gmaps = googlemaps.Client(key='AIzaSyDsPapEJ0GGmrkiJ5jXG1uKcvf8xk4hMw8')
+        geocode_result = gmaps.geocode(self.context.address)
+
+        lat = geocode_result[0]['geometry']['location']['lat']
+        lng = geocode_result[0]['geometry']['location']['lng']
+
+        results['lat'] = lat
+        results['lng'] = lng
+
+        # return 'http://maps.google.com/?q={},{}'.format(lat,lng)
+
+        # import pdb;pdb.set_trace()
+        return results
+
 
 

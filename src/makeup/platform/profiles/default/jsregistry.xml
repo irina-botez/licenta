@@ -4,4 +4,9 @@
     id="++resource++makeup.platform/mua_gallery.js"
     cacheable="True" compression="safe" cookable="True"
     enabled="True" expression=""  inline="False" insert-after="toc.js"/>
+
+  <javascript
+    id="++resource++makeup.platform/gmaps_display.js"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression=""  inline="False" insert-after="mua_gallery.js"/>
 </object>

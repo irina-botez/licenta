@@ -8,6 +8,8 @@
 <head>
     <metal:block fill-slot="style_slot">
       <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
+      <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/gmaps_display.js"></script>
+
 
     </metal:block>
 </head>
@@ -24,6 +26,9 @@
       <p tal:condition="python: not view.has_description()">This makeup artist hasn't filled a description yet. Please contact the makeup artist for more information.</p>
     </div>
 
+    <h1 id="view-imgs"
+       tal:condition="view/has_photos">Check out some of this artist's work!</h1>
+
     <div id="img-list-wrapper">
       <div class="img-container fade"
            tal:repeat="pics view/image_listing">
@@ -31,12 +36,38 @@
         <img class="mua-page-img"
              tal:attributes="src pics"/>
       </div>
+
+      <a tal:condition="view/has_photos"
+         id="prev">&#10094;</a>
+      <a tal:condition="view/has_photos"
+         id="next">&#10095;</a>
     </div>
 
-  <a tal:condition="view/has_photos"
-     id="prev">&#10094;</a>
-  <a tal:condition="view/has_photos"
-     id="next">&#10095;</a>
+    <div id="footer">
+      <h2>Contact information</h2>
+      <p tal:content="view/phone_nr">MUA phone</p>
+      <!--<a tal:content="view/map_studio"></a>-->
+
+      <div id="map-wrapper"
+           tal:condition="view/has_address"
+           tal:define="location view/map_studio" >
+        <p tal:content="view/has_address">MUA studio address</p>
+
+        <div id="map"></div>
+        <!-- Replace the value of the key parameter with your own API key. -->
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsPapEJ0GGmrkiJ5jXG1uKcvf8xk4hMw8&callback=initMap">
+        </script>
+
+        <p id="studio-lat"
+           tal:content="location/lat"></p>
+        <p id="studio-lng"
+           tal:content="location/lng"></p>
+
+      </div>
+    </div>
+
+
 
   <script>
 
