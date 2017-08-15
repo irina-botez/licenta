@@ -59,8 +59,9 @@ class MuaView(BrowserView):
 
         # return 'http://maps.google.com/?q={},{}'.format(lat,lng)
 
-        # import pdb;pdb.set_trace()
         return results
 
+class MuaListing(BrowserView):
+    pass
 
 

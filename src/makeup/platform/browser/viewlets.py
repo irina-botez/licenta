@@ -20,7 +20,7 @@ class MuaViewlet(ViewletBase):
     def get_mua_page(self):
         site = getSite()
 
-        return site.absolute_url() + '/@@view_mua'
+        return site.absolute_url() + '/@@all_artists'
 
 class RegisterViewlet(ViewletBase):
 

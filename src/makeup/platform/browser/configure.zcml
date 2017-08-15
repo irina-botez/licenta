@@ -27,6 +27,15 @@
       layer="makeup.platform.interfaces.IMakeupPlatformLayer"
       />
 
+  <browser:page
+      name="all_artists"
+      for="*"
+      class=".views.MuaListing"
+      permission="zope.Public"
+      template="templates/mua_listing.pt"
+      layer="makeup.platform.interfaces.IMakeupPlatformLayer"
+      />
+
   <browser:viewlet
   name="mua_page_link"
   for="*"
