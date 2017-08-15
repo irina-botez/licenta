@@ -13,8 +13,15 @@
 <body>
   <metal:block fill-slot="content-core">
 
-    <h1 class="documentFirstHeading">All the artists that have joined our platform are one click away!</h1>
+  <h1 class="documentFirstHeading">All the artists that have joined our platform are one click away!</h1>
+
+   <script type="text/javascript">
+    document.getElementById("makeup-slider").style.display = "none";
+  </script>
 
   </metal:block>
+
+
+
 </body>
 </html>
