@@ -62,6 +62,42 @@ class MuaView(BrowserView):
         return results
 
 class MuaListing(BrowserView):
-    pass
+
+    def mua_listing(self):
+
+        results = []
+        portal_catalog = api.portal.get_tool('portal_catalog')
+
+        brains = portal_catalog(
+            portal_type="MakeupArtist",
+            sort_on='created',
+            sort_order='descending',
+        )
+
+        for brain in brains:
+
+            mua = brain.getObject()
+
+            if mua.website:
+                website = mua.website
+            else:
+                website = "-"
+
+            if mua.address:
+                studio = mua.address
+            else:
+                studio = "-"
 
 
+            container = mua.unrestrictedTraverse(mua.virtual_url_path())
+            path = container.absolute_url()
+
+            results.append({
+                'name': mua.name,
+                'phone': mua.phone,
+                'site': website,
+                'address': studio,
+                'link': path,
+            })
+
+        return results
