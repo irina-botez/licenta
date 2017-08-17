@@ -130,6 +130,40 @@ body{
   width: 50%;
  }
 
+/* MUA listing */
+.mua-info{
+    font-size:2.3em;
+    font-weight: bold;
+    padding-left: 1em;
+}
+
+.mua-info span{
+    font-weight: normal;
+}
+
+.mua-listing{
+    width: 1000px;
+    height: 300px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px #888888;
+    margin-bottom: 2em;
+    background-color: #EFCBD5;
+}
+
+#first-info{
+    padding-top: 1.5em;
+}
+
+.mua-listing a{
+    border-style: none !important;
+}
+
+.documentFirstHeading{
+    padding-bottom: 1em;
+}
+
+
+
 
 
 

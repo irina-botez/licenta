@@ -19,10 +19,10 @@
     document.getElementById("makeup-slider").style.display = "none";
    </script>
 
-   <div id="mua-listing"
+   <div class="mua-listing"
         tal:repeat="mua view/mua_listing">
 
-     <p class="mua-info">Makeup Artist: <span tal:content="mua/name">MUA Name</span></p>
+     <p class="mua-info" id="first-info">Makeup Artist: <span tal:content="mua/name">MUA Name</span></p>
      <p class="mua-info">Phone number: <span tal:content="mua/phone">MUA Number</span></p>
      <p class="mua-info">Personal website: <a tal:attributes="href mua/site"
                                               tal:content="mua/site">MUA Site</a></p>
