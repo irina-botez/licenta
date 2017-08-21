@@ -7,8 +7,18 @@
 
 <head>
     <metal:block fill-slot="style_slot">
-      <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
-      <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/gmaps_display.js"></script>
+    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/css/bootstrap.min.css">
+    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/css/bootstrap-datetimepicker.css">
+    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform//event_calendar/pit-scheduler/dist/css/pitscheduler.min.css">
+
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/bootstrap.min.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/dist/js/pitscheduler.min.js"></script>
+
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/gmaps_display.js"></script>
 
 
     </metal:block>
@@ -17,6 +27,11 @@
 <body>
   <metal:block fill-slot="content-core">
     <h1 id="mua-rate">Rate this MUA</h1>
+
+    <div id="pit-scheduler"></div>
+
+
+
     <h1 class="documentFirstHeading" tal:content="view/mua_name" />
 
     <div id="mua-description-div">
@@ -49,7 +64,7 @@
 
       <div id="map-wrapper"
            tal:condition="view/has_address">
-        
+
         <p tal:content="view/has_address"
            tal:define="location view/map_studio">MUA studio address</p>
 
@@ -66,6 +81,12 @@
 
       </div>
     </div>
+
+    <script>
+      $(document).ready(function () {
+    $("#pit-scheduler").pitScheduler(/* options */);
+});
+    </script>
 
   </metal:block>
 </body>

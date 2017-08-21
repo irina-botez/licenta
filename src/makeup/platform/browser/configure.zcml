@@ -76,4 +76,9 @@
     directory="static"
     />
 
+  <!--<browser:resourceDirectory-->
+    <!--name="makeup.platform.calendar"-->
+    <!--directory="event_calendar"-->
+    <!--/>-->
+
 </configure>

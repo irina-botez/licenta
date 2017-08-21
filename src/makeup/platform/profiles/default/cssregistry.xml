@@ -15,4 +15,40 @@
         rendering="import"
         insert-after="ploneKss.css" />
 
+  <stylesheet
+        id="++resource++makeup.platform/event_calendar/pit-scheduler/demo/css/bootstrap.min.css"
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="1"
+        expression=""
+        media=""
+        rel="stylesheet"
+        rendering="import"
+        insert-after="homepage_override.css" />
+
+  <stylesheet
+        id="++resource++makeup.platform/event_calendar/pit-scheduler/demo/css/bootstrap-datetimepicker.css"
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="1"
+        expression=""
+        media=""
+        rel="stylesheet"
+        rendering="import"
+        insert-after="bootstrap.min.css" />
+
+  <stylesheet
+        id="++resource++makeup.platform/event_calendar/pit-scheduler/dist/css/pitscheduler.min.css"
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="1"
+        expression=""
+        media=""
+        rel="stylesheet"
+        rendering="import"
+        insert-after="bootstrap-datetimepicker.less" />
+
 </object>
