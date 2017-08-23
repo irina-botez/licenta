@@ -11,29 +11,13 @@
     enabled="True" expression=""  inline="False" insert-after="mua_gallery.js"/>
 
   <javascript
-    id="++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/jquery-2.2.4.min.js"
+    id="++resource++makeup.platform/caleandar.min.js"
     cacheable="True" compression="safe" cookable="True"
     enabled="True" expression=""  inline="False" insert-after="gmaps_display.js"/>
 
   <javascript
-    id="++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/bootstrap.min.js"
+    id="++resource++makeup.platform/caleandar.js"
     cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""  inline="False" insert-after="jquery.min.js.js"/>
-
-  <javascript
-    id="++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/moment-with-locales.min.js"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""  inline="False" insert-after="bootstrap.min.js"/>
-
-  <javascript
-    id="++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/bootstrap-datetimepicker.js"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""  inline="False" insert-after="moment.min.js"/>
-
-  <javascript
-    id="++resource++makeup.platform/event_calendar/pit-scheduler/dist/js/pitscheduler.min.js"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""  inline="False" insert-after="bootstrap-datetimepicker.js"/>
-
+    enabled="True" expression=""  inline="False" insert-after="caleandar.min.js"/>
 
 </object>

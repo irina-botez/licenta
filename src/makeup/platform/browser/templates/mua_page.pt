@@ -7,15 +7,8 @@
 
 <head>
     <metal:block fill-slot="style_slot">
-    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/css/bootstrap.min.css">
-    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/css/bootstrap-datetimepicker.css">
-    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform//event_calendar/pit-scheduler/dist/css/pitscheduler.min.css">
 
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/bootstrap.min.js"></script>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/moment-with-locales.min.js"></script>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/demo/js/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/event_calendar/pit-scheduler/dist/js/pitscheduler.min.js"></script>
+    <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform/theme1.css">
 
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/gmaps_display.js"></script>
@@ -33,6 +26,9 @@
 
 
     <h1 class="documentFirstHeading" tal:content="view/mua_name" />
+
+    <div id="caleandar">
+    </div>
 
     <div id="mua-description-div">
       <p tal:condition="view/has_description"
@@ -79,13 +75,23 @@
         <p id="studio-lng"
            tal:content="location/lng"></p>
 
+
+
       </div>
     </div>
 
+
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/caleandar.js"></script>
+
     <script>
-      $(document).ready(function () {
-    $("#pit-scheduler").pitScheduler(/* options */);
-});
+      var events = [
+      {'Date': new Date(2017, 6, 7), 'Title': 'Doctor appointment at 3:25pm.'},
+      {'Date': new Date(2017, 6, 18), 'Title': 'New Garfield movie comes out!', 'Link': 'https://garfield.com'},
+      {'Date': new Date(2017, 6, 27), 'Title': '25 year anniversary', 'Link': 'https://www.google.com.au/#q=anniversary+gifts'},
+      ];
+      var settings = {};
+      var element = document.getElementById('caleandar');
+      caleandar(element, events, settings);
     </script>
 
   </metal:block>
