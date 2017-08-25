@@ -164,6 +164,37 @@ body{
     padding-bottom: 1em;
 }
 
+.btn {
+  background: #A03CB8;
+  background-image: -webkit-linear-gradient(top, #A03CB8, #f0b2ee);
+  background-image: -moz-linear-gradient(top, #A03CB8, #f0b2ee);
+  background-image: -ms-linear-gradient(top, #A03CB8, #f0b2ee);
+  background-image: -o-linear-gradient(top, #A03CB8, #f0b2ee);
+  background-image: linear-gradient(to bottom, #A03CB8, #f0b2ee);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #A03CB8;
+  background-image: -webkit-linear-gradient(top, #A03CB8, #000000);
+  background-image: -moz-linear-gradient(top, #A03CB8, #000000);
+  background-image: -ms-linear-gradient(top, #A03CB8, #000000);
+  background-image: -o-linear-gradient(top, #A03CB8, #000000);
+  background-image: linear-gradient(to bottom, #A03CB8, #000000);
+  text-decoration: none;
+}
+
 /*Pop-up register form*/
 
 body {

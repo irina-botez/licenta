@@ -27,7 +27,7 @@
 
     <h1 id="mua-rate">Rate this MUA</h1>
 
-    <button id="popup-modal">Make an appointment</button>
+    <button id="popup-modal" class="btn">Make an appointment</button>
 
     <div id="caleandar">
     </div>
