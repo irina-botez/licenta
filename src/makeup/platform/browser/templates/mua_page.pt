@@ -12,6 +12,8 @@
 
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/gmaps_display.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/jquery.leanModal.min.js"></script>
+
 
 
     </metal:block>
@@ -19,13 +21,13 @@
 
 <body>
   <metal:block fill-slot="content-core">
+    <div id="overlay" class="cover">
+      <div class="content">
+    <h1 class="documentFirstHeading" tal:content="view/mua_name" />
+
     <h1 id="mua-rate">Rate this MUA</h1>
 
-    <div id="pit-scheduler"></div>
-
-
-
-    <h1 class="documentFirstHeading" tal:content="view/mua_name" />
+    <button id="popup-modal">Make an appointment</button>
 
     <div id="caleandar">
     </div>
@@ -79,6 +81,20 @@
 
       </div>
     </div>
+
+      </div>
+    </div>
+
+    <div class="row pop-up">
+    <div class="box small-6 large-centered">
+      <a href="#" class="close-button">&#10006;</a>
+      <h3>lorem ipsum</h3>
+      <p>Integer non odio id ante rutrum dictum. Nam ac dapibus felis, at pharetra sapien. </p>
+      <p>Maecenas lacus nisi, pellentesque a congue vel, rhoncus sit amet lacus. Sed mattis ultrices risus in tincidunt.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+    </div>
+
 
 
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/caleandar.js"></script>
