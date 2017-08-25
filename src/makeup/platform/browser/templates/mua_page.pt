@@ -29,8 +29,7 @@
 
     <button id="popup-modal" class="btn">Make an appointment</button>
 
-    <div id="caleandar">
-    </div>
+
 
     <div id="mua-description-div">
       <p tal:condition="view/has_description"
@@ -88,10 +87,28 @@
     <div class="row pop-up">
     <div class="box small-6 large-centered">
       <a href="#" class="close-button">&#10006;</a>
-      <h3>lorem ipsum</h3>
-      <p>Integer non odio id ante rutrum dictum. Nam ac dapibus felis, at pharetra sapien. </p>
-      <p>Maecenas lacus nisi, pellentesque a congue vel, rhoncus sit amet lacus. Sed mattis ultrices risus in tincidunt.</p>
-      <a href="#" class="button">Learn More</a>
+      <h1>Book this makeup artist!</h1>
+      <h2 id="cal-header">Check out the artist's schedule</h2>
+      <div id="caleandar">
+      </div>
+      <form>
+
+    <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Date (yyyy-mm-dd)</label>
+    </div>
+
+    <div class="group">
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Hour</label>
+    </div>
+
+  </form>
+
     </div>
     </div>
 

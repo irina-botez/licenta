@@ -13,6 +13,7 @@
     margin: auto;
     overflow: hidden;
     height: 80px;
+    margin-top: 70px;
   }
   .cld-datetime .today{
     position: relative;
