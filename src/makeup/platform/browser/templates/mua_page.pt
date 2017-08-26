@@ -93,6 +93,8 @@
       </div>
       <form>
 
+    <div id="reservation-inputs">
+    <h2>Pick a date and an hour:</h2>
     <div class="group">
       <input type="text" required>
       <span class="highlight"></span>
@@ -105,6 +107,7 @@
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>Hour</label>
+    </div>
     </div>
 
   </form>
