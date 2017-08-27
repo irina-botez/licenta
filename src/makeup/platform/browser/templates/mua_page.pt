@@ -98,13 +98,13 @@
     <div class="info">The makeup session is 2 hours long</div>
     <h2>Pick a date and an hour:</h2>
     <div class="group">
-      <input type="text" required>
+      <input type="text" id="res-date" required>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>Date (yyyy-mm-dd)</label>
     </div>
     <div class="group">
-      <input type="text" required>
+      <input type="text" id="res-hour" required>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>Hour</label>
