@@ -5,6 +5,12 @@
 */
 var Calendar = function(model, options, date){
   // Default Values
+  var new_model=[];
+
+  for(var i in model){
+    new_model.push({'Date' : new Date(model[i]['Date']), 'Title': model[i]['Title'] });
+  }
+
   this.Options = {
     Color: '',
     LinkColor: '',
@@ -17,14 +23,16 @@ var Calendar = function(model, options, date){
     EventClick: '',
     EventTargetWholeDay: false,
     DisabledDays: [],
-    ModelChange: model
+    ModelChange: new_model
   };
+
+
   // Overwriting default values
   for(var key in options){
     this.Options[key] = typeof options[key]=='string'?options[key].toLowerCase():options[key];
   }
 
-  model?this.Model=model:this.Model={};
+  new_model?this.Model=new_model:this.Model={};
   this.Today = new Date();
 
   this.Selected = this.Today

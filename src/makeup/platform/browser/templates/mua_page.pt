@@ -122,14 +122,27 @@
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/caleandar.js"></script>
 
     <script>
-      var events = [
-      {'Date': new Date(2017, 6, 7), 'Title': '18:00-19:00 - Popescu Ionela'},
-      {'Date': new Date(2017, 6, 18), 'Title': 'New Garfield movie comes out!', 'Link': 'https://garfield.com'},
-      {'Date': new Date(2017, 6, 27), 'Title': '25 year anniversary', 'Link': 'https://www.google.com.au/#q=anniversary+gifts'},
-      ];
+
+function setterfunc(targetedelement) {
+
+    if(localStorage[targetedelement] == undefined) {
+        localStorage[targetedelement] = '{"events":[]}';
+        var settings = {};
+        var element = document.getElementById('caleandar');
+
+        caleandar(element, [], settings);
+    }
+    else{
+      var my_json = JSON.parse(localStorage[targetedelement]);
+
       var settings = {};
       var element = document.getElementById('caleandar');
-      caleandar(element, events, settings);
+
+      caleandar(element, my_json.events, settings);
+    }
+
+    };
+    setterfunc('doc_json_string');
     </script>
 
   </metal:block>
