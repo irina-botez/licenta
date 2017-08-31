@@ -122,25 +122,20 @@
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/caleandar.js"></script>
 
     <script>
-
-function setterfunc(targetedelement) {
+    function setterfunc(targetedelement) {
 
     if(localStorage[targetedelement] == undefined) {
         localStorage[targetedelement] = '{"events":[]}';
         var settings = {};
         var element = document.getElementById('caleandar');
-
         caleandar(element, [], settings);
     }
     else{
       var my_json = JSON.parse(localStorage[targetedelement]);
-
       var settings = {};
       var element = document.getElementById('caleandar');
-
       caleandar(element, my_json.events, settings);
     }
-
     };
     setterfunc('doc_json_string');
     </script>

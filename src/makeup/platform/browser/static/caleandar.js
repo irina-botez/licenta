@@ -216,41 +216,20 @@ function createCalendar(calendar, element, adjuster){
         var evDate = calendar.Model[n].Date;
         var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month, (i+1));
         if(evDate.getTime() == toDate.getTime()){
+
+        if($(number).hasClass("eventday")){
+          var title = $(number).children('span');
+          var span_html = $(title).html();
+          $(title).html(span_html + '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>');
+        }
+        else{
           number.className += " eventday";
           var title = document.createElement('span');
           title.className += "cld-title";
-          if(typeof calendar.Model[n].Link == 'function' || calendar.Options.EventClick){
-            var a = document.createElement('a');
-            a.setAttribute('href', '#');
-            a.innerHTML += calendar.Model[n].Title;
-            if(calendar.Options.EventClick){
-              var z = calendar.Model[n].Link;
-              if(typeof calendar.Model[n].Link != 'string'){
-                  a.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
-                  if(calendar.Options.EventTargetWholeDay){
-                    day.className += " clickable";
-                    day.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
-                  }
-              }else{
-                a.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
-                if(calendar.Options.EventTargetWholeDay){
-                  day.className += " clickable";
-                  day.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
-                }
-              }
-            }else{
-              a.addEventListener('click', calendar.Model[n].Link);
-              if(calendar.Options.EventTargetWholeDay){
-                day.className += " clickable";
-                day.addEventListener('click', calendar.Model[n].Link);
-              }
-            }
-            title.appendChild(a);
-          }else{
-            title.innerHTML += '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
-          }
+          title.innerHTML += '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
           number.appendChild(title);
         }
+       }
       }
       day.appendChild(number);
       // If Today..

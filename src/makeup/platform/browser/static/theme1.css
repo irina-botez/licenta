@@ -116,3 +116,7 @@
       .today .cld-number.eventday:hover{
         background: #888;
       }
+.cld-title a
+{
+  display: block;
+}
