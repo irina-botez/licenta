@@ -220,13 +220,13 @@ function createCalendar(calendar, element, adjuster){
         if($(number).hasClass("eventday")){
           var title = $(number).children('span');
           var span_html = $(title).html();
-          $(title).html(span_html + '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>');
+          $(title).html(span_html + '<a href="javascript:void(0);">' + calendar.Model[n].Title + '</a>');
         }
         else{
           number.className += " eventday";
           var title = document.createElement('span');
           title.className += "cld-title";
-          title.innerHTML += '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
+          title.innerHTML += '<a href="javascript:void(0);">' + calendar.Model[n].Title + '</a>';
           number.appendChild(title);
         }
        }
