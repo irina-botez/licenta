@@ -12,7 +12,6 @@
 
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_gallery.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/gmaps_display.js"></script>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/jquery.leanModal.min.js"></script>
 
 
 
@@ -120,6 +119,8 @@
 
 
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/caleandar.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/jquery.leanModal.min.js"></script>
+
 
     <script>
     function setterfunc(targetedelement) {
@@ -134,6 +135,7 @@
       var my_json = JSON.parse(localStorage[targetedelement]);
       var settings = {};
       var element = document.getElementById('caleandar');
+      sortList(my_json.events);
       caleandar(element, my_json.events, settings);
     }
     };
