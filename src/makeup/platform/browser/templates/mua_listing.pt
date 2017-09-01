@@ -24,8 +24,10 @@
 
      <p class="mua-info" id="first-info">Makeup Artist: <span tal:content="mua/name">MUA Name</span></p>
      <p class="mua-info">Phone number: <span tal:content="mua/phone">MUA Number</span></p>
+     <p class="mua-info">Current rating: <span tal:content="mua/rating">MUA Rating</span></p>
      <p class="mua-info">Personal website: <a tal:attributes="href mua/site"
-                                              tal:content="mua/site">MUA Site</a></p>
+                                              tal:content="mua/site">MUA Site</a>
+     </p>
      <p class="mua-info">Studio address: <span tal:content="mua/address">MUA Studio</span></p>
      <a class="mua-info"
         tal:attributes="href mua/link">Check out this makeup artist!</a>

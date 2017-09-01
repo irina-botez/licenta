@@ -1,6 +1,15 @@
 from Products.Five import BrowserView
 from plone import api
 import googlemaps
+import urllib
+
+def find_between( s, first, last ):
+    try:
+        start = s.index( first ) + len( first )
+        end = s.index( last, start )
+        return s[start:end]
+    except ValueError:
+        return ""
 
 class MuaView(BrowserView):
     """View a makeup artist page"""
@@ -92,12 +101,21 @@ class MuaListing(BrowserView):
             container = mua.unrestrictedTraverse(mua.virtual_url_path())
             path = container.absolute_url()
 
+            mua_page = urllib.urlopen(path)
+            mua_page_html = mua_page.read()
+
+            div = '<div class="current-rating" style="width:60.0%">'
+            closed_div = '</div>'
+
+            rating = find_between( mua_page_html, div, closed_div ) + ' / 5.0'
+
             results.append({
                 'name': mua.name,
                 'phone': mua.phone,
                 'site': website,
                 'address': studio,
                 'link': path,
+                'rating': rating
             })
 
         return results

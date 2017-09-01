@@ -145,8 +145,7 @@ body{
 
 .mua-listing{
     width: 1000px;
-    height: 300px;
-    background-color: yellow;
+    height: 350px;
     box-shadow: 10px 10px 5px #888888;
     margin-bottom: 2em;
     background-color: #EFCBD5;
@@ -549,11 +548,7 @@ input:focus ~ .highlight {
 }
 
 .info, .success, .warning, .error, .validation {
-border: 1px solid;
-margin: 10px 0px;
-padding:15px 10px 15px 50px;
-background-repeat: no-repeat;
-background-position: 10px center;
+mua
 }
 
 .info {
