@@ -34,7 +34,29 @@
 
    </div>
 
+   <div id="mua_filter">
+    <h1>Filter:</h1>
+    <label for="search_by_fullname">Name:</label>
+    <input text="text" id="search_by_fullname">
+    <br>
+    <label for="search_by_rating">Rating (number of stars):</label>
+    <select id="search_by_rating">
+      <option value="any">-</option>
+      <option value="one">1</option>
+      <option value="two">2</option>
+      <option value="three">3</option>
+      <option value="four">4</option>
+      <option value="five">5</option>
+    </select>
+    <button value="Clear" id="filter-btn" class="btn">Clear filters</button>
+   </div>
+
+  <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_filter.js"></script>
   </metal:block>
+
+
+
+
 
 
 

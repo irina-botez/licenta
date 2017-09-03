@@ -25,4 +25,9 @@
     cacheable="True" compression="safe" cookable="True"
     enabled="True" expression=""  inline="False" insert-after="caleandar.js"/>
 
+  <javascript
+    id="++resource++makeup.platform/mua_filter.js"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression=""  inline="False" insert-after="jquery.leanModal.min.js"/>
+
 </object>

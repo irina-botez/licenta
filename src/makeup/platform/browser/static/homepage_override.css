@@ -573,3 +573,29 @@ height: 200px;
 #portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e74656e745f747970650a4d616b6575704172746973740a696d616765732d717569636b2d75706c6f6164{
     display: none;
 }
+
+/*mua filter*/
+#mua_filter{
+    float: right;
+    margin-top: -1000px;
+    margin-right: 200px;
+    font-size: 25px;
+}
+
+#mua_filter input{
+    margin-bottom: 20px;
+    height: 25px;
+    font-size: 25px;
+}
+
+#mua_filter select{
+    height: 40px;
+    width: 50px;
+    font-size: 25px;
+}
+
+#mua_filter button{
+    display: block;
+}
+
+

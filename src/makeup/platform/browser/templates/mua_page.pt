@@ -73,10 +73,7 @@
         <tal:block repeat="address view/map_studio">
           <input type="hidden" id="studio-lat" tal:attributes="value address/lat" />
           <input type="hidden" id="studio-lng" tal:attributes="value address/lng" />
-
         </tal:block>
-
-
 
       </div>
     </div>

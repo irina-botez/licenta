@@ -109,7 +109,12 @@ class MuaListing(BrowserView):
             div = '<div class="current-rating" style="width:60.0%">'
             closed_div = '</div>'
 
-            rating = find_between( mua_page_html, div, closed_div ) + ' / 5.0'
+            rating = find_between( mua_page_html, div, closed_div )
+
+            if rating == '':
+                rating = "This makeup artist didn't receive any rating yet"
+            else:
+                rating = rating + ' / 5.0'
 
             results.append({
                 'name': mua.name,
@@ -117,7 +122,7 @@ class MuaListing(BrowserView):
                 'site': website,
                 'address': studio,
                 'link': path,
-                'rating': rating
+                'rating': rating,
             })
 
         return results
