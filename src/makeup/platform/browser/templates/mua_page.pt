@@ -62,8 +62,7 @@
       <div id="map-wrapper"
            tal:condition="view/has_address">
 
-        <p tal:content="view/has_address"
-           tal:define="location view/map_studio">MUA studio address</p>
+        <p tal:content="view/has_address">MUA studio address</p>
 
         <div id="map"></div>
         <!-- Replace the value of the key parameter with your own API key. -->
@@ -71,10 +70,11 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsPapEJ0GGmrkiJ5jXG1uKcvf8xk4hMw8&callback=initMap">
         </script>
 
-        <p id="studio-lat"
-           tal:content="location/lat"></p>
-        <p id="studio-lng"
-           tal:content="location/lng"></p>
+        <tal:block repeat="address view/map_studio">
+          <input type="hidden" id="studio-lat" tal:attributes="value address/lat" />
+          <input type="hidden" id="studio-lng" tal:attributes="value address/lng" />
+
+        </tal:block>
 
 
 

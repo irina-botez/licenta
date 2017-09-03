@@ -55,7 +55,7 @@ class MuaView(BrowserView):
         return 'Phone number: {}'.format(self.context.phone)
 
     def map_studio(self):
-        results = {}
+        results = []
 
         gmaps = googlemaps.Client(key='AIzaSyDsPapEJ0GGmrkiJ5jXG1uKcvf8xk4hMw8')
         geocode_result = gmaps.geocode(self.context.address)
@@ -63,8 +63,10 @@ class MuaView(BrowserView):
         lat = geocode_result[0]['geometry']['location']['lat']
         lng = geocode_result[0]['geometry']['location']['lng']
 
-        results['lat'] = lat
-        results['lng'] = lng
+        results.append({
+            'lat': lat,
+            'lng': lng,
+        })
 
         # return 'http://maps.google.com/?q={},{}'.format(lat,lng)
 
