@@ -74,6 +74,19 @@ class MuaView(BrowserView):
 
 class MuaListing(BrowserView):
 
+    def get_current_rating(self, path):
+
+        mua_page = urllib.urlopen(path)
+        mua_page_html = mua_page.read()
+
+        div = '<div class="current-rating" '
+        closed_div = '</div>'
+
+        rating = find_between(mua_page_html, div, closed_div)
+        rating = rating[-3:]
+
+        return rating
+
     def mua_listing(self):
 
         results = []
@@ -103,26 +116,13 @@ class MuaListing(BrowserView):
             container = mua.unrestrictedTraverse(mua.virtual_url_path())
             path = container.absolute_url()
 
-            mua_page = urllib.urlopen(path)
-            mua_page_html = mua_page.read()
-
-            div = '<div class="current-rating" style="width:60.0%">'
-            closed_div = '</div>'
-
-            rating = find_between( mua_page_html, div, closed_div )
-
-            if rating == '':
-                rating = "This makeup artist didn't receive any rating yet"
-            else:
-                rating = rating + ' / 5.0'
-
             results.append({
                 'name': mua.name,
                 'phone': mua.phone,
                 'site': website,
                 'address': studio,
                 'link': path,
-                'rating': rating,
+                'rating': self.get_current_rating(path),
             })
 
         return results
