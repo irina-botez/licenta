@@ -448,7 +448,7 @@ body {
   margin-bottom:45px;
 }
 
-input 				{
+.group input 				{
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -456,10 +456,10 @@ input 				{
   border:none;
   border-bottom:1px solid #757575;
 }
-input:focus 		{ outline:none; }
+.group input:focus 		{ outline:none; }
 
 /* LABEL ======================================= */
-label 				 {
+.group label 				 {
   color:#999;
   font-size:18px;
   font-weight:normal;
@@ -473,7 +473,7 @@ label 				 {
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label 		{
+input:focus ~ .group label, input:valid ~ .group label 		{
   top:-20px;
   font-size:14px;
   color:#5264AE;
@@ -500,7 +500,7 @@ input:focus ~ label, input:valid ~ label 		{
 }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+.group input:focus ~ .bar:before, .group input:focus ~ .bar:after {
   width:50%;
 }
 
@@ -516,7 +516,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
+.group input:focus ~ .highlight {
   -webkit-animation:inputHighlighter 0.3s ease;
   -moz-animation:inputHighlighter 0.3s ease;
   animation:inputHighlighter 0.3s ease;
@@ -557,4 +557,14 @@ background-color: #BDE5F8;
 background-image: url('info.png');
 font-size: 17px;
 margin-top: -20px;
+}
+
+/*ADD new MUA*/
+label.horizontal{
+    font-size: 25px;
+}
+
+#form-buttons-save, #form-buttons-cancel{
+width: 100px;
+height: 200px;
 }
