@@ -24,7 +24,7 @@
 
      <p class="mua-info" id="first-info">Makeup Artist: <span tal:content="mua/name">MUA Name</span></p>
      <p class="mua-info">Phone number: <span tal:content="mua/phone">MUA Number</span></p>
-     <p class="mua-info">Current rating: <span tal:content="mua/rating">MUA Rating</span></p>
+     <p class="mua-info">Current rating: <span class="mua-rating-span" tal:content="mua/rating">MUA Rating</span></p>
      <p class="mua-info">Personal website: <a tal:attributes="href mua/site"
                                               tal:content="mua/site">MUA Site</a>
      </p>
@@ -42,11 +42,11 @@
     <label for="search_by_rating">Rating (number of stars):</label>
     <select id="search_by_rating">
       <option value="any">-</option>
-      <option value="one">1</option>
-      <option value="two">2</option>
-      <option value="three">3</option>
-      <option value="four">4</option>
-      <option value="five">5</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
     <button value="Clear" id="filter-btn" class="btn">Clear filters</button>
    </div>
