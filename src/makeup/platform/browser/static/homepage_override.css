@@ -569,8 +569,9 @@ label.horizontal{
 }
 
 #form-buttons-save, #form-buttons-cancel{
-width: 100px;
-height: 200px;
+width: 90px;
+height: 50px;
+font-size: 20px;
 }
 
 /*second upload*/
