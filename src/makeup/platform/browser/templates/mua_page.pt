@@ -23,7 +23,7 @@
   <metal:block fill-slot="content-core">
     <div id="overlay" class="cover">
       <div class="content">
-    <h1 class="documentFirstHeading" tal:content="view/mua_name" />
+    <h1 class="documentFirstHeading" id="mua-name" tal:content="view/mua_name" />
 
     <h1 id="mua-rate">Rate this MUA</h1>
 
@@ -114,12 +114,16 @@
     </div>
 
 
-
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/caleandar.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/jquery.leanModal.min.js"></script>
 
 
     <script>
+    function generate_uid(){
+    var mua = $('#mua-name').text();
+    return mua.substring(15,mua.length).replace(/ /g,"_");
+    }
+
     function setterfunc(targetedelement) {
 
     if(localStorage[targetedelement] == undefined) {
@@ -136,7 +140,8 @@
       caleandar(element, my_json.events, settings);
     }
     };
-    setterfunc('doc_json_string');
+    setterfunc(generate_uid());
+
     </script>
 
   </metal:block>
