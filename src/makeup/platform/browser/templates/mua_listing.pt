@@ -19,6 +19,7 @@
     document.getElementById("makeup-slider").style.display = "none";
    </script>
 
+   <div class="mua-listings">
    <div class="mua-listing"
         tal:repeat="mua view/mua_listing">
 
@@ -32,6 +33,7 @@
      <a class="mua-info"
         tal:attributes="href mua/link">Check out this makeup artist!</a>
 
+   </div>
    </div>
 
    <div id="mua_filter">

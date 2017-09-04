@@ -144,11 +144,15 @@ body{
 }
 
 .mua-listing{
-    width: 1000px;
-    height: 350px;
     box-shadow: 10px 10px 5px #888888;
     margin-bottom: 2em;
     background-color: #EFCBD5;
+    padding-bottom: 1.5em;
+}
+
+.mua-listings {
+  float: left;
+  width: 35%;
 }
 
 #first-info{
@@ -576,10 +580,10 @@ height: 200px;
 
 /*mua filter*/
 #mua_filter{
-    float: right;
-    margin-top: -1000px;
-    margin-right: 200px;
+    float: left;
     font-size: 25px;
+    width: 33%;
+    margin-left: 800px;
 }
 
 #mua_filter input{
