@@ -49,4 +49,10 @@
       factory=".setuphandlers.HiddenProfiles"
       name="makeup.platform-hiddenprofiles" />
 
+
+   <subscriber
+      for="makeup.platform.interfaces.IArtist zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".content.artist.on_add"
+      />
+
 </configure>
