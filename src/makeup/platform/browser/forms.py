@@ -53,8 +53,12 @@ class UserType(RegistrationForm):
         user = api.user.create(email=data['email'], username=data['username'], password=data['password'], properties=properties)
 
         api.user.grant_roles(username=data['username'],
-                             roles=[role,]
+                             roles=[role, ]
                              )
+
+        if role == 'Makeup Artist':
+            api.user.grant_roles(username=data['username'],roles=['Contributor'])
+
         acl_users = getToolByName(self, 'acl_users')
 
         usr = data['username'].encode('utf-8')
