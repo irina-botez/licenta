@@ -57,7 +57,7 @@ body{
     font-size: 2em;
 }
 
-#mua-rate{
+.mua-rate{
     float: right;
     padding-right: 2.1em;
     margin-top: -210px !important;

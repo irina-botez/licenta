@@ -14,6 +14,15 @@ def find_between( s, first, last ):
 class MuaView(BrowserView):
     """View a makeup artist page"""
 
+    def is_logged_client(self):
+
+        user = api.user.get_current()
+
+        if 'Client' in user.getRoles():
+            return True
+
+        return False
+
     def image_listing(self):
         results = []
         portal_catalog = api.portal.get_tool('portal_catalog')

@@ -25,9 +25,12 @@
       <div class="content">
     <h1 class="documentFirstHeading" id="mua-name" tal:content="view/mua_name" />
 
-    <h1 id="mua-rate">Rate this MUA</h1>
+    <h1 class="mua-rate" tal:condition="view/is_logged_client">Rate this MUA</h1>
+    <h1 class="mua-rate" tal:condition="python: not view.is_logged_client()">Rating</h1>
 
-    <button id="popup-modal" class="btn">Make an appointment</button>
+    <input type="hidden" id="isClient" tal:attributes="value view/is_logged_client" />
+
+    <button id="popup-modal" class="btn" tal:condition="view/is_logged_client">Make an appointment</button>
 
 
 
