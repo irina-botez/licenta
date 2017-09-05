@@ -608,4 +608,12 @@ font-size: 20px;
     display: block;
 }
 
+#portaltab-all-clients{
+    display: none;
+}
+
+#portaltab-all-artists{
+    display: none;
+}
+
 

@@ -81,6 +81,7 @@ class MuaView(BrowserView):
 
         return results
 
+
 class MuaListing(BrowserView):
 
     def get_current_rating(self, path):
