@@ -23,6 +23,10 @@ class MuaView(BrowserView):
 
         return False
 
+    def get_client_name(self):
+        user = api.user.get_current()
+        return user.getProperty('fullname')
+
     def image_listing(self):
         results = []
         portal_catalog = api.portal.get_tool('portal_catalog')

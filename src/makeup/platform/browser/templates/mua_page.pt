@@ -29,6 +29,7 @@
     <h1 class="mua-rate" tal:condition="python: not view.is_logged_client()">Rating</h1>
 
     <input type="hidden" id="isClient" tal:attributes="value view/is_logged_client" />
+    <input type="hidden" id="clientName" tal:attributes="value view/get_client_name" />
 
     <button id="popup-modal" class="btn" tal:condition="view/is_logged_client">Make an appointment</button>
 
