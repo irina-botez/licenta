@@ -53,7 +53,7 @@ class UserType(RegistrationForm):
         user = api.user.create(email=data['email'], username=data['username'], password=data['password'], properties=properties)
 
         api.user.grant_roles(username=data['username'],
-                             roles=[role, ]
+                             roles=[role, 'Reviewer']
                              )
 
         if role == 'Makeup Artist':

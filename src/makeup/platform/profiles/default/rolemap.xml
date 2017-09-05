@@ -32,6 +32,8 @@
     <permission name="Content Ratings: User Rate" acquire="True">
       <role name="Client"/>
     </permission>
-
+    <permission name="Review portal content" acquire="True">
+      <role name="Makeup Artist"/>
+    </permission>
   </permissions>
 </rolemap>
