@@ -55,4 +55,9 @@
       handler=".content.artist.on_add"
       />
 
+  <subscriber
+      for="makeup.platform.interfaces.IClient zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".content.client.on_add"
+  />
+
 </configure>
