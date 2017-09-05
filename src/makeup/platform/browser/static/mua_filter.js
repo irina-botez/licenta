@@ -10,7 +10,7 @@ $('#search_by_rating').change(function(){
     val_float = parseFloat(val) * 1.0;
     $('.mua-rating-span').each(function(){
       var rating_text = $(this).text().substring(0,3)
-      if(rating_text == val_float) $(this).parent().parent().show();
+      if(rating_text >= val_float && rating_text < val_float+1.0) $(this).parent().parent().show();
       else if(val == 'any') $(this).parent().parent().show();
       else $(this).parent().parent().hide();
     });
