@@ -97,7 +97,7 @@ class MuaListing(BrowserView):
         closed_div = '</div>'
 
         rating = find_between(mua_page_html, div, closed_div)
-        rating = rating[-3:]
+        rating = round(float(rating[rating.find('>')+1:]),1)
 
         return rating
 
