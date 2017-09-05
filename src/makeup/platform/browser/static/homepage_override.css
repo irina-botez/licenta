@@ -551,16 +551,21 @@ input:focus ~ .group label, input:valid ~ .group label 		{
     padding-top: 50px;
 }
 
-.info, .success, .warning, .error, .validation {
-mua
+
+.info-mes {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url(info_icon.png);
+    font-size: 17px;
+    margin-top: -20px;
+    background-repeat: no-repeat;
+    height: 40px;
+    background-position: 10px center;
 }
 
-.info {
-color: #00529B;
-background-color: #BDE5F8;
-background-image: url('info.png');
-font-size: 17px;
-margin-top: -20px;
+.info-mes p{
+    padding-top: 8px;
+    padding-left: 40px;
 }
 
 /*ADD new MUA*/

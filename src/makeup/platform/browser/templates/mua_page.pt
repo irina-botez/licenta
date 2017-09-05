@@ -91,7 +91,7 @@
       <form>
 
     <div id="reservation-inputs">
-    <div class="info">The makeup session is 2 hours long</div>
+      <div class="info-mes"><p>The makeup session is 2 hours long</p></div>
     <h2>Pick a date and an hour:</h2>
     <div class="group">
       <input type="text" id="res-date" required>
