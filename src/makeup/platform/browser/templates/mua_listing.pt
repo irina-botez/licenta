@@ -13,14 +13,35 @@
 <body>
   <metal:block fill-slot="content-core">
 
-  <h1 class="documentFirstHeading">All the artists that have joined our platform are one click away!</h1>
+  <h2 class="listing_title">All the artists that have joined our platform are one click away!</h2>
 
    <script type="text/javascript">
     document.getElementById("makeup-slider").style.display = "none";
    </script>
 
+    <div id="mua_filter">
+      <h1>Filter:</h1>
+        <div class="form-group">
+          <label for="search_by_fullname">Name:</label>
+          <input text="text" id="search_by_fullname">
+        </div>
+
+       <div class="form-group">
+        <label for="search_by_rating">Rating (number of stars):</label>
+        <select id="search_by_rating">
+          <option value="any">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+       </div>
+      <button value="Clear" id="filter-btn" class="btn">Clear filters</button>
+   </div>
+
    <div class="mua-listings">
-   <div class="mua-listing"
+   <div class="mua-listing active-rating active-name"
         tal:repeat="mua view/mua_listing">
 
      <p class="mua-info" id="first-info">Makeup Artist: <span tal:content="mua/name">MUA Name</span></p>
@@ -34,23 +55,6 @@
         tal:attributes="href mua/link">Check out this makeup artist!</a>
 
    </div>
-   </div>
-
-   <div id="mua_filter">
-    <h1>Filter:</h1>
-    <label for="search_by_fullname">Name:</label>
-    <input text="text" id="search_by_fullname">
-    <br>
-    <label for="search_by_rating">Rating (number of stars):</label>
-    <select id="search_by_rating">
-      <option value="any">-</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <button value="Clear" id="filter-btn" class="btn">Clear filters</button>
    </div>
 
   <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_filter.js"></script>

@@ -149,7 +149,7 @@ function createCalendar(calendar, element, adjuster){
       if(calendar.Options.NavShow && !calendar.Options.NavVertical){
         var fwd = document.createElement('div');
         fwd.className += " cld-fwd cld-nav";
-        fwd.addEventListener('click', function(){createCalendar(calendar, element, 1);} );
+         fwd.addEventListener('click', function(){createCalendar(calendar, element, 1);} );
         fwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(0,0,0,0.5)"><polyline points="0,0 75,50 0,100"></polyline></svg>';
         datetime.appendChild(fwd);
       }

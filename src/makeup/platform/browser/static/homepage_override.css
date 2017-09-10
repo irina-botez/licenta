@@ -7,6 +7,12 @@ body{
     height: 100%;
     background-size: cover;
 }
+#content {
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
 
 #portal-globalnav li a, #portal-globalnav{
     background: #A03CB8 !important;
@@ -16,7 +22,10 @@ body{
     font-weight: bold;
     font-family: 'Alex Brush';
     font-style: oblique;
-    border-left: 0.1em solid white;
+    border: none;
+}
+#portal-globalnav li + li a {
+    border-left: 1px solid;
 }
 
 #portal-globalnav li a:hover{
@@ -32,12 +41,14 @@ body{
 .mua-page-img{
     height: 55em;
     width: 45em;
+    object-fit: cover;
 }
 
 #img-list-wrapper {
   max-width: 1000px;
   position: relative;
   padding-top: 5em;
+  width: 45em;
 }
 
 #view-imgs{
@@ -92,7 +103,7 @@ body{
 #next {
   right: 0;
   border-radius: 3px 0 0 3px;
-  margin-right: 23.5em;
+  /*margin-right: 23.5em;*/
 }
 
 #prev {
@@ -148,11 +159,21 @@ body{
     margin-bottom: 2em;
     background-color: #EFCBD5;
     padding-bottom: 1.5em;
+    flex: 1 0 48%;
+    margin-left: 15px;
+    display: none;
+}
+.mua-listing.active-rating.active-name {
+    display: block;
 }
 
 .mua-listings {
-  float: left;
-  width: 35%;
+  /*float: left;
+  width: 35%;*/
+      display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+        clear: both;
 }
 
 #first-info{
@@ -167,7 +188,8 @@ body{
     padding-bottom: 1em;
 }
 
-.btn {
+.btn,
+ .qq-upload-button {
   background: #A03CB8;
   background-image: -webkit-linear-gradient(top, #A03CB8, #f0b2ee);
   background-image: -moz-linear-gradient(top, #A03CB8, #f0b2ee);
@@ -188,7 +210,8 @@ body{
   text-decoration: none;
 }
 
-.btn:hover {
+.btn:hover,
+ .qq-upload-button:hover {
   background: #A03CB8;
   background-image: -webkit-linear-gradient(top, #A03CB8, #000000);
   background-image: -moz-linear-gradient(top, #A03CB8, #000000);
@@ -207,22 +230,21 @@ body {
 .cover {
     height: 100%;
     width: 100%;
-    position: absolute;
     z-index: 1;
 }
 
 .blur-in {
-    -webkit-animation: blur 2s forwards;
-    -moz-animation: blur 2s forwards;
-    -o-animation: blur 2s forwards;
-    animation: blur 2s forwards;
+    -webkit-animation: blur .2s forwards;
+    -moz-animation: blur .2s forwards;
+    -o-animation: blur .2s forwards;
+    animation: blur .2s forwards;
 }
 
 .blur-out {
-    -webkit-animation: blur-out 2s forwards;
-    -moz-animation: blur-out 2s forwards;
-    -o-animation: blur-out 2s forwards;
-    animation: blur-out 2s forwards;
+    -webkit-animation: blur-out .2s forwards;
+    -moz-animation: blur-out .2s forwards;
+    -o-animation: blur-out .2s forwards;
+    animation: blur-out .2s forwards;
 }
 
 @-webkit-keyframes blur {
@@ -370,11 +392,13 @@ body {
 }
 
 .pop-up {
-    position: fixed;
-    margin: 5% auto;
-    left: 0;
-    right: 0;
+    position: fixed !important;
+    /*margin: 5% auto;*/
+    left: 5%;
+    right: 5%;
+    top: 0;
     z-index: 2;
+    width: auto !important;
 }
 
 .box {
@@ -387,7 +411,7 @@ body {
     -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
-    width: 1500px;
+    /*width: 1500px;*/
 }
 
 .button {
@@ -543,7 +567,7 @@ input:focus ~ .group label, input:valid ~ .group label 		{
 #reservation-inputs{
     float: right;
     margin-top: -500px;
-    padding-right: 150px;
+    padding-right: 50px;
 }
 
 #reservation-inputs h2{
@@ -586,10 +610,11 @@ font-size: 20px;
 
 /*mua filter*/
 #mua_filter{
-    float: left;
     font-size: 25px;
-    width: 33%;
-    margin-left: 800px;
+    /* width: 33%; */
+    /* margin-left: 800px; */
+    /* display: flex; */
+    margin-bottom: 1em;
 }
 
 #mua_filter input{
@@ -614,4 +639,10 @@ font-size: 20px;
 
 #portaltab-all-artists{
     display: none;
+}
+
+/*navigation portlet*/
+#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a6e617669676174696f6e
+{
+ display:none;
 }

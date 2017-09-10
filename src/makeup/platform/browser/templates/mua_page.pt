@@ -98,16 +98,14 @@
       <div class="info-mes"><p>The makeup session is 2 hours long</p></div>
     <h2>Pick a date and an hour:</h2>
     <div class="group">
-      <input type="text" id="res-date" required>
+      <input type="text" id="res-date" placeholder="Date (yyyy-mm-dd)" required>
       <span class="highlight"></span>
       <span class="bar"></span>
-      <label>Date (yyyy-mm-dd)</label>
     </div>
     <div class="group">
-      <input type="text" id="res-hour" required>
+      <input type="text" id="res-hour" placeholder="Hour (1-24)" required>
       <span class="highlight"></span>
       <span class="bar"></span>
-      <label>Hour (1-24)</label>
     </div>
     <button class="btn" id="reservation-btn">Book this artist</button>
     </div>
