@@ -133,6 +133,7 @@ class MuaListing(BrowserView):
             portal_type="MakeupArtist",
             sort_on='created',
             sort_order='descending',
+            review_state='published'
         )
 
         for brain in brains:
