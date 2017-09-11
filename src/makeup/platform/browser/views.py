@@ -23,6 +23,9 @@ class MuaView(BrowserView):
 
         return False
 
+    def is_admin(self):
+        return 'admin' == api.user.get_current()
+
     def has_site(self):
         if self.context.website:
             return self.context.website
