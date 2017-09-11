@@ -64,6 +64,13 @@
       <h2>Contact information</h2>
       <p tal:content="view/phone_nr">MUA phone</p>
 
+      <p tal:condition="view/has_site">
+        Personal website:
+        <span>
+         <a tal:attributes="href view/has_site" tal:content="view/has_site"></a>
+        </span>
+      </p>
+
       <div id="map-wrapper"
            tal:condition="view/has_address">
 

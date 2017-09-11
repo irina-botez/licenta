@@ -23,6 +23,11 @@ class MuaView(BrowserView):
 
         return False
 
+    def has_site(self):
+        if self.context.website:
+            return self.context.website
+        return False
+
     def get_client_page(self):
         user = api.user.get_current()
         user_id = user.getProperty('id');
