@@ -23,6 +23,26 @@ class MuaView(BrowserView):
 
         return False
 
+    def get_client_page(self):
+        user = api.user.get_current()
+        user_id = user.getProperty('id');
+
+        portal_catalog = api.portal.get_tool('portal_catalog')
+
+        brains = portal_catalog(
+            portal_type="Client",
+            sort_on='created',
+            sort_order='descending',
+        )
+
+        for brain in brains:
+            client = brain.getObject()
+            if client.title == user_id.encode('utf-8'):
+                container = user.unrestrictedTraverse(client.virtual_url_path())
+                return container.absolute_url()
+
+        return '#'
+
     def get_client_name(self):
         user = api.user.get_current()
         return user.getProperty('fullname')

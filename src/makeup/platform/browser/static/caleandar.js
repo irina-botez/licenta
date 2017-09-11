@@ -6,9 +6,13 @@
 var Calendar = function(model, options, date){
   // Default Values
   var new_model=[];
+  var user_pages=[];
 
   for(var i in model){
-    new_model.push({'Date' : new Date(model[i]['Date']), 'Title': model[i]['Title'] });
+    new_model.push({'Date' : new Date(model[i]['Date']),
+    'Title': model[i]['Title'].substr(0, model[i]['Title'].lastIndexOf(',')),
+    'Href': model[i]['Title'].substr(model[i]['Title'].lastIndexOf(',')+1, model[i]['Title'].length)});
+
   }
 
   this.Options = {
@@ -180,6 +184,9 @@ function createCalendar(calendar, element, adjuster){
       number.innerHTML += n;
       return number;
     }
+
+    var go_to_client = $('#clienturl').val();
+
     var days = document.createElement('ul');
     days.className += "cld-days";
     // Previous Month's Days
@@ -215,18 +222,19 @@ function createCalendar(calendar, element, adjuster){
       for(var n = 0; n < calendar.Model.length; n++){
         var evDate = calendar.Model[n].Date;
         var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month, (i+1));
+        var clienturl = calendar.Model[n].Href
         if(evDate.getTime() == toDate.getTime()){
 
         if($(number).hasClass("eventday")){
           var title = $(number).children('span');
           var span_html = $(title).html();
-          $(title).html(span_html + '<a href="javascript:void(0);">' + calendar.Model[n].Title + '</a>');
+          $(title).html(span_html + '<a href="' + clienturl + '">' + calendar.Model[n].Title + '</a>');
         }
         else{
           number.className += " eventday";
           var title = document.createElement('span');
           title.className += "cld-title";
-          title.innerHTML += '<a href="javascript:void(0);">' + calendar.Model[n].Title + '</a>';
+          title.innerHTML += '<a href="' + clienturl + '">' + calendar.Model[n].Title + '</a>';
           number.appendChild(title);
         }
        }

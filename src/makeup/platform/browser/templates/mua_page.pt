@@ -30,6 +30,7 @@
 
     <input type="hidden" id="isClient" tal:attributes="value view/is_logged_client" />
     <input type="hidden" id="clientName" tal:attributes="value view/get_client_name" />
+    <input type="hidden" id="clienturl" tal:attributes="value view/get_client_page" />
 
     <button id="popup-modal" class="btn" tal:condition="view/is_logged_client">Make an appointment</button>
 
