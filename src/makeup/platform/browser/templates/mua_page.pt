@@ -25,9 +25,6 @@
       <div class="content">
     <h1 class="documentFirstHeading" id="mua-name" tal:content="view/mua_name" />
 
-    <h1 class="mua-rate" tal:condition="view/is_logged_client">Rate this MUA</h1>
-    <h1 class="mua-rate" tal:condition="python: not view.is_logged_client()">Rating</h1>
-
     <input type="hidden" id="isClient" tal:attributes="value view/is_logged_client" />
     <input type="hidden" id="clientName" tal:attributes="value view/get_client_name" />
     <input type="hidden" id="clienturl" tal:attributes="value view/get_client_page" />
