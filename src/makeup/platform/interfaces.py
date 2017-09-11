@@ -17,6 +17,13 @@ def username_as_title():
     id = unicode(current.getProperty('id'), "utf-8")
     return id
 
+def mua_full_name():
+
+    current = api.user.get_current()
+    name = unicode(current.getProperty('fullname'), "utf-8")
+    return name
+
+
 
 class IMakeupPlatformLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
@@ -26,6 +33,7 @@ class IArtist(model.Schema):
     name = schema.TextLine(
         title=_(u"Full name"),
         required=True,
+        defaultFactory=mua_full_name
     )
 
     website = URI(
