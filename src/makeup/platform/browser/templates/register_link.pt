@@ -1,9 +1,8 @@
 <div id="register-link">
-    <a href="#"
-       class="register-anchor"
+    <button class="btn"><a class="register-anchor"
        tal:define="link view/get_register_page"
        tal:attributes="href link"
        tal:condition="view/is_anonymous" >
          Sign up!
-    </a>
+    </a></button>
 </div>

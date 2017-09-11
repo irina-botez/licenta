@@ -1,9 +1,9 @@
 <div id="mua-link">
-    <a href="#"
+    <button class="btn"><a href="#"
        class="mua-anchor"
        tal:define="link view/get_mua_page"
        tal:attributes="href link"
        tal:condition="view/get_role">
          Check out all the artists!
-    </a>
+    </a></button>
 </div>
