@@ -25,13 +25,11 @@
       <div class="content">
     <h1 class="documentFirstHeading" id="mua-name" tal:content="view/mua_name" />
 
+    <h1 class="mua-rate" tal:condition="view/is_logged_client">Rate this MUA</h1>
+    <h1 class="mua-rate" tal:condition="python: not view.is_logged_client()">Rating</h1>
+
     <input type="hidden" id="isClient" tal:attributes="value view/is_logged_client" />
     <input type="hidden" id="clientName" tal:attributes="value view/get_client_name" />
-    <input type="hidden" id="clienturl" tal:attributes="value view/get_client_page" />
-    <input type="hidden" id="isAdminMuaPage" tal:attributes="value view/is_admin" />
-    <input type="hidden" id="isMua" tal:attributes="value view/is_logged_mua"  tal:condition="view/is_logged_mua"/>
-
-
 
     <button id="popup-modal" class="btn" tal:condition="view/is_logged_client">Make an appointment</button>
 
@@ -47,7 +45,7 @@
     <h1 id="view-imgs"
        tal:condition="view/has_photos">Check out some of this artist's work!</h1>
 
-    <div id="img-list-wrapper">
+    <div class="img-list-wrapper">
       <div class="img-container fade"
            tal:repeat="pics view/image_listing">
 
@@ -64,13 +62,6 @@
     <div id="footer">
       <h2>Contact information</h2>
       <p tal:content="view/phone_nr">MUA phone</p>
-
-      <p tal:condition="view/has_site">
-        Personal website:
-        <span>
-         <a tal:attributes="href view/has_site" tal:content="view/has_site"></a>
-        </span>
-      </p>
 
       <div id="map-wrapper"
            tal:condition="view/has_address">
@@ -94,7 +85,7 @@
       </div>
     </div>
 
-    <div class="row pop-up" tal:condition="view/is_logged_client">
+    <div class="row pop-up">
     <div class="box small-6 large-centered">
       <a href="#" class="close-button">&#10006;</a>
       <h1>Book this makeup artist!</h1>

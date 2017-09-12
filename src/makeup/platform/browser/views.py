@@ -11,6 +11,22 @@ def find_between( s, first, last ):
     except ValueError:
         return ""
 
+
+class ClientView(BrowserView):
+    def get_name(self):
+        return self.context.name
+
+    def get_img(self):
+        if self.context.self_image:
+            return self.context.self_image.filename.encode('utf-8')
+        return False
+
+    def get_age(self):
+        return self.context.age
+
+    def get_skin_type(self):
+        return self.context.skin_type
+
 class MuaView(BrowserView):
     """View a makeup artist page"""
     def is_logged_mua(self):

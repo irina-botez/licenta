@@ -25,11 +25,20 @@
       permission="zope.Public"
       template="templates/mua_page.pt"
       layer="makeup.platform.interfaces.IMakeupPlatformLayer"
-      />
+  />
+
+  <browser:page
+      name="view_client"
+      for="*"
+      class=".views.ClientView"
+      permission="zope.Public"
+      template="templates/client_page.pt"
+      layer="makeup.platform.interfaces.IMakeupPlatformLayer"
+  />
 
   <browser:page
       name="artists-listing"
-      for="Products.CMFPlone.Portal.PloneSite"
+      for="*"
       class=".views.MuaListing"
       permission="zope.Public"
       template="templates/mua_listing.pt"

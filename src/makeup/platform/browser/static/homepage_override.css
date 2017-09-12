@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
 }
 
-#img-list-wrapper {
+.img-list-wrapper {
   max-width: 1000px;
   position: relative;
   padding-top: 5em;
@@ -68,7 +68,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
 }
 
-
+.mua-rate{
+    float: right;
+    padding-right: 2.1em;
+    margin-top: -210px !important;
+    font-size: 35px;
+}
 
 .documentDescription.description{
     display:none;
@@ -406,7 +411,7 @@ body {
     -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
-    width: 75%;
+    /*width: 1500px;*/
 }
 
 .button {
@@ -576,10 +581,10 @@ input:focus ~ .group label, input:valid ~ .group label 		{
     background-color: #BDE5F8;
     background-image: url(info_icon.png);
     font-size: 17px;
+    margin-top: -20px;
     background-repeat: no-repeat;
     height: 40px;
     background-position: 10px center;
-    padding-right: 1.4%;
 }
 
 .info-mes p{
@@ -642,16 +647,12 @@ font-size: 20px;
  display:none;
 }
 
-/*home page buttons*/
-#mua-link button a:hover, #mua-link button a,
-#register-link button a:hover, #register-link button a,
-#login-link button a:hover, #login-link button a
-{
- color:white !important;
+.client-info{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0.5em;
 }
 
-.description.discreet{
-    display: none;
+.client-info span{
+    font-weight: normal;
 }
-
-

@@ -59,21 +59,35 @@ class IArtist(model.Schema):
 
 class IClient(model.Schema):
 
+    age = schema.Int(
+        title=_(u"Age"),
+        required=True,
+        min=15,
+        max=80,
+    )
+
     self_image = NamedBlobImage(
         title=_(u"Upload an image of yourself with no makeup"),
         required=False
     )
 
-    phone = schema.TextLine(
-        title=_(u"Phone number"),
+    skin_type = schema.Choice(
+        title=_(u"Skin type"),
         required=True,
-        constraint=utils.check_phone,
+        default=u'Normal',
+        values=[_(u'Normal'), _(u'Combination'), _(u'Dry'), _(u'Oily')]
     )
 
     title = schema.TextLine(
-        title=_(u"Client username"),
+        title=_(u"Username"),
         required=True,
         defaultFactory=username_as_title,
+    )
+
+    name = schema.TextLine(
+        title=_(u"Full name"),
+        required=True,
+        defaultFactory=mua_full_name
     )
 
 class MinMax(object):
