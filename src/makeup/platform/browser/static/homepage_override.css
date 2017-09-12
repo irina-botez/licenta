@@ -644,7 +644,8 @@ font-size: 20px;
 
 /*home page buttons*/
 #mua-link button a:hover, #mua-link button a,
-#register-link button a:hover, #register-link button a
+#register-link button a:hover, #register-link button a,
+#login-link button a:hover, #login-link button a
 {
  color:white !important;
 }

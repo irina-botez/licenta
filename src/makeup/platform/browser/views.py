@@ -13,6 +13,10 @@ def find_between( s, first, last ):
 
 class MuaView(BrowserView):
     """View a makeup artist page"""
+    def is_logged_mua(self):
+        if api.user.is_anonymous():
+            return False
+        return api.user.get_current().getProperty('fullname')
 
     def is_logged_client(self):
 

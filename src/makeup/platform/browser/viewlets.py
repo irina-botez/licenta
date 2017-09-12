@@ -31,3 +31,12 @@ class RegisterViewlet(ViewletBase):
         site = getSite()
         return site.absolute_url() + '/register'
 
+class LoginViewlet(ViewletBase):
+
+    def is_anonymous(self):
+        return api.user.is_anonymous()
+
+    def get_login_page(self):
+        site = getSite()
+        return site.absolute_url() + '/login'
+

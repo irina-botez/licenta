@@ -1,0 +1,8 @@
+<div id="login-link">
+    <button class="btn"><a class="register-anchor"
+       tal:define="link view/get_login_page"
+       tal:attributes="href link"
+       tal:condition="view/is_anonymous" >
+         Log in
+    </a></button>
+</div>

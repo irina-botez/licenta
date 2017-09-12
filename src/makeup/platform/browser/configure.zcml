@@ -28,8 +28,8 @@
       />
 
   <browser:page
-      name="all_artists"
-      for="*"
+      name="artists-listing"
+      for="Products.CMFPlone.Portal.PloneSite"
       class=".views.MuaListing"
       permission="zope.Public"
       template="templates/mua_listing.pt"
@@ -53,6 +53,16 @@
   class=".viewlets.RegisterViewlet"
   layer="zope.interface.Interface"
   template="templates/register_link.pt"
+  permission="zope2.View"
+  />
+
+  <browser:viewlet
+  name="login_link"
+  for="*"
+  manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+  class=".viewlets.LoginViewlet"
+  layer="zope.interface.Interface"
+  template="templates/login_link.pt"
   permission="zope2.View"
   />
 
