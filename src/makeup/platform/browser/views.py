@@ -19,7 +19,7 @@ class ClientView(BrowserView):
 
     def get_img(self):
         if self.context.self_image:
-            return self.context.self_image.filename.encode('utf-8')
+            return self.context.self_image.filename
         return False
 
     def get_age(self):

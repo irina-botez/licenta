@@ -15,10 +15,6 @@
 
   <h2 class="listing_title">All the artists that have joined our platform are one click away!</h2>
 
-   <script type="text/javascript">
-    document.getElementById("makeup-slider").style.display = "none";
-   </script>
-
     <div id="mua_filter">
       <h1>Filter:</h1>
         <div class="form-group">
@@ -58,6 +54,8 @@
    </div>
 
   <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_filter.js"></script>
+  <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_list.js"></script>
+
   </metal:block>
 
 

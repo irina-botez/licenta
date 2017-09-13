@@ -30,6 +30,12 @@
     cacheable="True" compression="safe" cookable="True"
     enabled="True" expression=""  inline="False" insert-after="jquery.leanModal.min.js"/>
 
+  <javascript
+    id="++resource++makeup.platform/mua_list.js"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression=""  inline="False" insert-after="mua_filter.js"/>
+
+
 
 
 

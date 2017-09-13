@@ -9,6 +9,7 @@ from makeup.platform import utils
 from plone import api
 from plone.namedfile.field import NamedBlobImage
 
+
 from zope import schema
 
 def username_as_title():
@@ -17,11 +18,11 @@ def username_as_title():
     id = unicode(current.getProperty('id'), "utf-8")
     return id
 
-def mua_full_name():
-
-    current = api.user.get_current()
-    name = unicode(current.getProperty('fullname'), "utf-8")
-    return name
+# def mua_full_name():
+#
+#     current = api.user.get_current()
+#     name = current.getProperty('fullname').encode('utf-8')
+#     return name
 
 
 
@@ -33,7 +34,7 @@ class IArtist(model.Schema):
     name = schema.TextLine(
         title=_(u"Full name"),
         required=True,
-        defaultFactory=mua_full_name
+        # defaultFactory=mua_full_name
     )
 
     website = URI(
@@ -87,7 +88,6 @@ class IClient(model.Schema):
     name = schema.TextLine(
         title=_(u"Full name"),
         required=True,
-        defaultFactory=mua_full_name
     )
 
 class MinMax(object):
