@@ -222,7 +222,7 @@ function createCalendar(calendar, element, adjuster){
       for(var n = 0; n < calendar.Model.length; n++){
         var evDate = calendar.Model[n].Date;
         var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month, (i+1));
-        var clienturl = calendar.Model[n].Href
+        var clienturl = calendar.Model[n].Href + '/@@view_client'
         if(evDate.getTime() == toDate.getTime()){
 
         if($(number).hasClass("eventday")){
