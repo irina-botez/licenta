@@ -657,7 +657,8 @@ font-size: 15px;
 #mua-link button a:hover, #mua-link button a,
 #register-link button a:hover, #register-link button a
 #register-link button a:hover, #register-link button a,
-#login-link button a:hover, #login-link button a
+#login-link button a:hover, #login-link button a,
+#edit-mua
 {
   color:white !important;
 }

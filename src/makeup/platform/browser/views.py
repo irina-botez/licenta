@@ -76,7 +76,7 @@ class MuaView(BrowserView):
 
         for brain in brains:
             client = brain.getObject()
-            if client.title == user_id.encode('utf-8'):
+            if client.title == user_id:
                 container = user.unrestrictedTraverse(client.virtual_url_path())
                 return container.absolute_url()
 
