@@ -7,8 +7,6 @@
 
 <head>
     <metal:block fill-slot="style_slot">
-
-
     </metal:block>
 </head>
 
@@ -24,7 +22,7 @@
       <img class="mua-page-img" tal:attributes="src string:${context/absolute_url}/view/++widget++form.widgets.self_image/@@download/${view/get_img}"/>
       </div>
 
-      <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_filter.js"></script>
+      <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++makeup.platform/mua_list.js"></script>
 
   </metal:block>
 </body>
