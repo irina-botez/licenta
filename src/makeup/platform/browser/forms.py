@@ -7,8 +7,8 @@ from makeup.platform import _
 from plone import api
 from Products.CMFCore.utils import getToolByName
 from zope.component import getMultiAdapter
-from plone.app.users.utils import notifyWidgetActionExecutionError
 from Products.statusmessages.interfaces import IStatusMessage
+
 
 class UserType(RegistrationForm):
 
@@ -23,12 +23,22 @@ class UserType(RegistrationForm):
 
     def validate_registration(self, action, data):
 
+        username = data.get('username')
         password = data.get('password')
         password_ctl = data.get('password_ctl')
+
+        membership = getToolByName(self.context, 'portal_membership')
+        for member in membership.listMembers():
+            if member.getUserName() == username:
+                err_str = _(u'Username already in use. Please choose another username')
+                IStatusMessage(self.request).addStatusMessage(err_str, type="error")
+                return False
+
         if password != password_ctl:
             err_str = _(u'Passwords do not match.')
             IStatusMessage(self.request).addStatusMessage(err_str, type="error")
             return False
+
         return True
 
 
@@ -51,6 +61,7 @@ class UserType(RegistrationForm):
 
 
         data, errors = self.extractData()
+
         if self.validate_registration(action, data) == False:
             self.request.response.redirect(url + '/register')
         else:
