@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
  $("#makeup-slider").hide();
- $('#edit-bar').hide();
+// $('#edit-bar').hide();
+
  });

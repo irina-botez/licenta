@@ -13,6 +13,7 @@
 <body>
   <metal:block fill-slot="content-core">
 
+
   <h2 class="listing_title">All the artists that have joined our platform are one click away!</h2>
 
     <div id="mua_filter">
@@ -43,12 +44,19 @@
      <p class="mua-info" id="first-info">Makeup Artist: <span tal:content="mua/name">MUA Name</span></p>
      <p class="mua-info">Phone number: <span tal:content="mua/phone">MUA Number</span></p>
      <p class="mua-info">Current rating: <span class="mua-rating-span" tal:content="mua/rating">MUA Rating</span></p>
-     <p class="mua-info">Personal website: <a tal:attributes="href mua/site"
-                                              tal:content="mua/site">MUA Site</a>
+     <p class="mua-info">Personal website: <a tal:define="site mua/site; cond python:site!='-'"
+                                              tal:attributes="href mua/site"
+                                              tal:content="mua/site"
+                                              tal:condition="cond"  >MUA Site</a>
+
+                                          <span tal:define="site mua/site; cond python:site=='-'"
+                                              tal:content="mua/site"
+                                              tal:condition="cond">MUA Site</span>
      </p>
      <p class="mua-info">Studio address: <span tal:content="mua/address">MUA Studio</span></p>
      <a class="mua-info"
         tal:attributes="href mua/link">Check out this makeup artist!</a>
+
 
    </div>
    </div>

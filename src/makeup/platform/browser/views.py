@@ -189,7 +189,6 @@ class MuaListing(BrowserView):
             else:
                 studio = "-"
 
-
             container = mua.unrestrictedTraverse(mua.virtual_url_path())
             path = container.absolute_url()
 
