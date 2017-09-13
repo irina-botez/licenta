@@ -2,6 +2,7 @@ from Products.Five import BrowserView
 from plone import api
 import googlemaps
 import urllib
+from Products.CMFCore.utils import getToolByName
 
 def find_between( s, first, last ):
     try:
@@ -29,6 +30,16 @@ class ClientView(BrowserView):
 
 class MuaView(BrowserView):
     """View a makeup artist page"""
+    def mua_email(self):
+        to_check = self.context.name.encode('utf-8')
+        membership = getToolByName(self.context, 'portal_membership')
+        for member in membership.listMembers():
+            if 'Makeup Artist' in member.getRoles():
+                if to_check == member.getProperty('fullname'):
+                    return member.getProperty('email')
+        return 'Something is wrong'
+
+
     def is_logged_mua(self):
         if api.user.is_anonymous():
             return False

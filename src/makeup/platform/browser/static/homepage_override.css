@@ -154,7 +154,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1.5em;
     flex: 1 0 48%;
     margin-left: 15px;
-    display: none;
 }
 
 .mua-listings {
@@ -177,7 +176,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn,
- .qq-upload-button {
+ .qq-upload-button,
+  #form-buttons-save,
+  #form-buttons-cancel
+  {
   background: #A03CB8;
   background-image: -webkit-linear-gradient(top, #A03CB8, #f0b2ee);
   background-image: -moz-linear-gradient(top, #A03CB8, #f0b2ee);
@@ -199,7 +201,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn:hover,
- .qq-upload-button:hover {
+ .qq-upload-button:hover,
+  #form-buttons-save:hover,
+  #form-buttons-cancel:hover{
   background: #A03CB8;
   background-image: -webkit-linear-gradient(top, #A03CB8, #000000);
   background-image: -moz-linear-gradient(top, #A03CB8, #000000);
@@ -588,7 +592,11 @@ label.horizontal{
 #form-buttons-save, #form-buttons-cancel{
 width: 90px;
 height: 50px;
-font-size: 20px;
+font-size: 15px;
+}
+
+#form-widgets-title{
+    width: 20%;
 }
 
 /*second upload*/
@@ -652,4 +660,13 @@ font-size: 20px;
 #login-link button a:hover, #login-link button a
 {
   color:white !important;
+}
+
+/*add new inputs*/
+#content textarea{
+    width: 20%;
+}
+
+.mua-contact-info span a{
+    font-weight: 900;
 }

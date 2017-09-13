@@ -61,19 +61,24 @@
 
     <div id="footer">
       <h2>Contact information</h2>
-      <p tal:content="view/phone_nr">MUA phone</p>
+      <p class="mua-contact-info" tal:content="view/phone_nr">MUA phone</p>
 
-      <p tal:condition="view/has_site">
+      <p class="mua-contact-info" tal:condition="view/has_site">
          Personal website:
          <span>
           <a tal:attributes="href view/has_site" tal:content="view/has_site"></a>
          </span>
        </p>
 
+      <p class="mua-contact-info">
+         Email address:
+         <span tal:content="view/mua_email"></span>
+       </p>
+
       <div id="map-wrapper"
            tal:condition="view/has_address">
 
-        <p tal:content="view/has_address">MUA studio address</p>
+        <p class="mua-contact-info" tal:content="view/has_address">MUA studio address</p>
 
         <div id="map"></div>
         <!-- Replace the value of the key parameter with your own API key. -->
