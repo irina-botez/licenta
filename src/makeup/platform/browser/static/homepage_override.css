@@ -574,7 +574,7 @@ input:focus ~ .group label, input:valid ~ .group label 		{
     background-image: url(info_icon.png);
     font-size: 17px;
     background-repeat: no-repeat;
-    height: 40px;
+    height: 30%;
     background-position: 10px center;
     padding-right: 1.4%;
 }
