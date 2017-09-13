@@ -2,24 +2,36 @@
 from plone.app.users.browser.register import RegistrationForm
 from makeup.platform.browser.interfaces import ICustomRegistrationForm, IUserType
 from zope.interface import implements
-
 from z3c.form import field, button
 from makeup.platform import _
-
 from plone import api
 from Products.CMFCore.utils import getToolByName
-
 from zope.component import getMultiAdapter
-
+from plone.app.users.utils import notifyWidgetActionExecutionError
+from Products.statusmessages.interfaces import IStatusMessage
 
 class UserType(RegistrationForm):
 
     implements(ICustomRegistrationForm)
 
+    formErrorsMessage = _('There were errors.')
+
     fields = field.Fields(IUserType)
     ignoreContext = True  # don't use context to get widget data
     def updateWidgets(self):
         super(UserType, self).updateWidgets()
+
+    def validate_registration(self, action, data):
+
+        password = data.get('password')
+        password_ctl = data.get('password_ctl')
+        if password != password_ctl:
+            err_str = _(u'Passwords do not match.')
+            IStatusMessage(self.request).addStatusMessage(err_str, type="error")
+            return False
+        return True
+
+
 
     @property
     def form_fields(self):
@@ -35,37 +47,41 @@ class UserType(RegistrationForm):
 
         portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
         acl_users = getToolByName(self.context, 'acl_users')
-
-        data, errors = self.extractData()
         url = self.context.absolute_url()
 
-        if data['user_type'] == 'Client':
-            role='Client'
-            redirect=url  + "/all-clients/++add++Client"
+
+        data, errors = self.extractData()
+        if self.validate_registration(action, data) == False:
+            self.request.response.redirect(url + '/register')
         else:
-            role='Makeup Artist'
-            redirect = url + "/all-artists/++add++MakeupArtist"
 
-        properties = dict(
-            fullname=data['fullname'],
-        )
+            if data['user_type'] == 'Client':
+                role='Client'
+                redirect=url  + "/all-clients/++add++Client"
+            else:
+                role='Makeup Artist'
+                redirect = url + "/all-artists/++add++MakeupArtist"
 
-        user = api.user.create(email=data['email'], username=data['username'], password=data['password'], properties=properties)
+            properties = dict(
+                fullname=data['fullname'],
+            )
 
-        api.user.grant_roles(username=data['username'],
-                             roles=[role, 'Reviewer']
-                             )
+            user = api.user.create(email=data['email'], username=data['username'], password=data['password'], properties=properties)
 
-        if role == 'Makeup Artist':
-            api.user.grant_roles(username=data['username'],roles=['Contributor'])
+            api.user.grant_roles(username=data['username'],
+                                 roles=[role, 'Reviewer']
+                                 )
 
-        acl_users = getToolByName(self, 'acl_users')
+            if role == 'Makeup Artist':
+                api.user.grant_roles(username=data['username'],roles=['Contributor'])
 
-        usr = data['username'].encode('utf-8')
+            acl_users = getToolByName(self, 'acl_users')
 
-        # auto-login after form submission + redirect to add page
-        acl_users.session._setupSession(usr, self.request.response)
-        self.request.response.redirect(redirect)
+            usr = data['username'].encode('utf-8')
+
+            # auto-login after form submission + redirect to add page
+            acl_users.session._setupSession(usr, self.request.response)
+            self.request.response.redirect(redirect)
 
 UserTypeView = UserType
 
