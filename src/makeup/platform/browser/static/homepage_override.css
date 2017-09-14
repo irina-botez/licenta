@@ -2,6 +2,12 @@
     display:none !important;
 }
 
+@media only screen and (max-width: 1800px) {
+    #makeup-slider {
+        display: none;
+    }
+}
+
 body{
     background-image: url('banner-mirror.jpg');
     height: 100%;
