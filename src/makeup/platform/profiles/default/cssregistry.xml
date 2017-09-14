@@ -15,16 +15,28 @@
         rendering="import"
         insert-after="ploneKss.css" />
 
-  <stylesheet
-        id="++resource++makeup.platform/theme1.css"
-        cacheable="True"
-        compression="safe"
-        cookable="True"
-        enabled="1"
-        expression=""
-        media=""
-        rel="stylesheet"
-        rendering="import"
-        insert-after="homepage_override.css" />
+    <stylesheet
+          id="++resource++makeup.platform/theme1.css"
+          cacheable="True"
+          compression="safe"
+          cookable="True"
+          enabled="1"
+          expression=""
+          media=""
+          rel="stylesheet"
+          rendering="import"
+          insert-after="homepage_override.css" />
+
+    <stylesheet
+          id="++resource++makeup.platform/client.css"
+          cacheable="True"
+          compression="safe"
+          cookable="True"
+          enabled="1"
+          expression=""
+          media=""
+          rel="stylesheet"
+          rendering="import"
+          insert-after="theme1.css" />
 
 </object>
