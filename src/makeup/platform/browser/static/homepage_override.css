@@ -6,6 +6,56 @@
     #makeup-slider {
         display: none;
     }
+    .cld-main{
+        width:700px !important;
+    }
+}
+
+@media only screen and (max-width: 1530px) {
+    .cld-main{
+        width:500px !important;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .cld-main{width:400px !important;}
+
+    .cld-datetime .today{font-size: 20px !important;}
+
+    .group input{width: 200px;margin-left:15%;}
+    #reservation-inputs h2 {font-size: 20px;}
+
+    #reservation-btn{font-size:15px;width:40%;}
+
+    .info-mes{width:93%;margin-left:15%;}
+}
+
+@media only screen and (max-width: 1050px) {
+    .cld-label, .cld-day {font-size: 15px !important;}
+
+    .cld-datetime .today{font-size: 20px !important;}
+
+    .group input{width: 140px !important;margin-left:40%;}
+    #reservation-inputs h2 {font-size: 15px;margin-left: 40%;}
+
+    #reservation-btn{margin-left: 40%;}
+
+    .info-mes{margin-top:15%;font-size:12px !important;}
+}
+
+@media only screen and (max-width: 910px) {
+    #reservation-inputs{margin-top:0 !important; float:left !important;}
+    .box{width:60%; height:1000px;}
+    .cld-label, .cld-day {font-size: 15px !important;}
+
+    .cld-datetime .today{font-size: 20px !important;}
+
+    .group input{width: 140px !important;margin-left:40%;padding: 0px 10px 0px 5px;}
+    #reservation-inputs h2 {font-size: 15px;margin-left: 40%; padding-top:10px !important;}
+
+    #reservation-btn{margin-left: 40%;}
+
+    .info-mes{margin-top:15%;font-size:12px !important;margin-top:-20px;}
 }
 
 body{
