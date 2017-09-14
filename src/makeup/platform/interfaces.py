@@ -44,7 +44,7 @@ class IArtist(model.Schema):
 
     phone = schema.TextLine(
         title=_(u"Phone number"),
-        required=True,
+        required=False,
         constraint=utils.check_phone,
     )
 

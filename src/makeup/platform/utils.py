@@ -6,10 +6,14 @@ from makeup.platform import _
 
 def check_phone(value):
     """Romania phone number validation"""
-
-    if len(value) < 10 or not value.isdigit():
+    if value[0] != '0' or value[1] != '7':
         raise Invalid(_(u"Invalid phone number"))
+
+    elif len(value) < 10 or not value.isdigit():
+        raise Invalid(_(u"Invalid phone number"))
+
     return True
+
 
 def validate_email(email):
     """Email adress validation"""

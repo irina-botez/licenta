@@ -124,7 +124,11 @@ class MuaView(BrowserView):
             return 'Studio address: {}'.format(self.context.address)
 
     def phone_nr(self):
-        return 'Phone number: {}'.format(self.context.phone)
+        if not self.context.phone:
+            phone = '-'
+        else:
+            phone = self.context.phone
+        return 'Phone number: {}'.format(phone)
 
     def map_studio(self):
         results = []
