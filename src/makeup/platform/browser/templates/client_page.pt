@@ -8,6 +8,11 @@
 <head>
     <metal:block fill-slot="style_slot">
       <link  rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++makeup.platform/client.css">
+      <style>
+      .documentFirstHeading, .RatingViewlet{
+          display:none;
+        }
+      </style>
     </metal:block>
 </head>
 
